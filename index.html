@@ -2,140 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mariela Ganova Design</title>
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
       background-color: #000;
       color: #ccc;
       font-family: 'Helvetica Neue', sans-serif;
       height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      overflow: hidden;
     }
-
     header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
       display: flex;
       justify-content: space-between;
-      align-items: center;
       padding: 1rem 2rem;
-    }
-
-    .logo {
-      font-size: 1.2rem;
-      color: #ccc;
-    }
-
-    .top-right {
-      display: flex;
       align-items: center;
-      gap: 1.5rem;
-      font-size: 0.9rem;
     }
-
-    .language-switch {
-      cursor: pointer;
+    .logo {
+      width: 40px;
+      height: 40px;
+      background-color: #444;
+      border-radius: 50%;
     }
-
-    .menu-icon {
-      cursor: pointer;
-      font-size: 1.4rem;
+    .icons {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
     }
-
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 3.5rem;
-      right: 2rem;
-      background-color: #111;
-      border: 1px solid #333;
-      padding: 1rem;
-      text-align: right;
-    }
-
-    .dropdown a {
-      display: block;
-      color: #ccc;
-      text-decoration: none;
-      margin: 0.5rem 0;
-      font-size: 0.9rem;
-    }
-
-    .dropdown a:hover {
-      color: #fff;
-    }
-
-    .center {
-      flex: 1;
+    .menu-toggle {
+      width: 25px;
+      height: 15px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: space-between;
+    }
+    .menu-toggle span {
+      background-color: #ccc;
+      height: 2px;
+      width: 100%;
+      display: block;
+    }
+    .language {
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    .center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
-      padding: 2rem;
     }
-
-    .center h1 {
-      font-size: 2rem;
-      font-weight: 300;
-      opacity: 0;
-      animation: fadeIn 2s ease forwards;
-      animation-delay: 1s;
+    .center-text h1 {
+      font-size: 1.2rem;
       letter-spacing: 2px;
-    }
-
-    .center p {
-      font-size: 1rem;
-      margin-top: 1rem;
-      opacity: 0;
-      animation: fadeIn 2s ease forwards;
-      animation-delay: 3s;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+      color: #ccc;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo">[LOGO]</div>
-
-    <div class="top-right">
-      <div class="language-switch">BG / EN</div>
-      <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    </div>
-    
-    <div class="dropdown" id="dropdownMenu">
-      <a href="#">About</a>
-      <a href="#">Projects</a>
-      <a href="#">Price</a>
-      <a href="#">Competitions</a>
-      <a href="#">Contacts</a>
+    <div class="logo"></div>
+    <div class="icons">
+      <div class="language">BG / EN</div>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </header>
-
-  <div class="center">
-    <h1>INTERIOR DESIGN BUREAU</h1>
-    <p>Interior design and architecture services worldwide</p>
+  <div class="center-text">
+    <h1>INTERIOR AND PRODUCT DESIGN BUREAU</h1>
   </div>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("dropdownMenu");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
-    }
-  </script>
-
 </body>
 </html>
