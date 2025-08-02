@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact – Mariela Ganova Design</title>
+  <title>Mariela Ganova Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       margin: 0;
       padding: 0;
       background-color: #000;
       color: #ccc;
-      font-family: 'Century Gothic', sans-serif;
+      font-family: 'Abel', sans-serif;
       height: 100vh;
       overflow: hidden;
+      position: relative;
     }
     header {
       position: absolute;
@@ -55,6 +58,18 @@
       font-size: 0.8rem;
       cursor: pointer;
     }
+    .center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .center-text h1 {
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      color: #ccc;
+    }
     .menu {
       display: none;
       position: absolute;
@@ -75,11 +90,44 @@
     .menu a:hover {
       color: #fff;
     }
+    .social-icons {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 1.5rem;
+    }
+    .social-icons a {
+      color: #ccc;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      color: #fff;
+    }
+    .contact-box {
+      position: absolute;
+      top: 20%;
+      right: 2rem;
+      color: #ccc;
+      text-align: right;
+      font-size: 1rem;
+      line-height: 2.2rem;
+    }
+    .contact-box h2 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .divider {
+      border-bottom: 1px solid #666;
+      margin: 0.5rem 0 1rem;
+    }
   </style>
 </head>
 <body>
   <header>
-    <a href="index.html"><div class="logo"></div></a>
+    <a href="index.html" class="logo"></a>
     <div class="icons">
       <div class="language">BG / EN</div>
       <div class="menu-toggle" onclick="toggleMenu()">
@@ -97,11 +145,16 @@
     <a href="products.html">0.5 PRODUCTS</a>
     <a href="price.html">0.6 PRICE</a>
     <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
-    <a href="awards.html">0.8 AWARDS</a>
-    <a href="press.html">0.9 PRESS</a>
-    <a href="contact.html">0.1.0 CONTACT</a>
+    <a href="awards.html">0.8 AWARDS & PRESS</a>
+    <a href="contact.html">0.9 CONTACT</a>
   </div>
-
+  <div class="contact-box">
+    <h2>GENERAL CONTACTS:</h2>
+    <div class="divider"></div>
+    <div><strong>E:</strong><br>m.ganova@mail.bg<br>mariela.ganova@gmail.com</div>
+    <div class="divider"></div>
+    <div><strong>T:</strong><br>+359897808730 (EU) (BG)</div>
+  </div>
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
