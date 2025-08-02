@@ -13,8 +13,7 @@
       background-color: #000;
       color: #ccc;
       font-family: 'Abel', sans-serif;
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
       position: relative;
     }
     header {
@@ -92,7 +91,7 @@
     }
     .social-icons {
       position: absolute;
-      bottom: 20px;
+      bottom: 40px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
@@ -105,6 +104,33 @@
     }
     .social-icons a:hover {
       color: #fff;
+    }
+    .contact-box {
+      position: absolute;
+      top: 20%;
+      right: 2rem;
+      color: #ccc;
+      text-align: right;
+      font-size: 1.2rem;
+      line-height: 2.4rem;
+    }
+    .contact-box h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .divider {
+      border-bottom: 1px solid #666;
+      margin: 0.5rem 0 1rem;
+    }
+    footer {
+      text-align: center;
+      color: #aaa;
+      font-size: 0.8rem;
+      padding: 0.5rem;
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
     }
   </style>
 </head>
@@ -131,15 +157,21 @@
     <a href="awards.html">0.8 AWARDS & PRESS</a>
     <a href="contact.html">0.9 CONTACT</a>
   </div>
-  <div class="center-text">
-    <h1>INTERIOR AND PRODUCT DESIGN BUREAU</h1>
+  <div class="contact-box">
+    <h2>GENERAL CONTACTS:</h2>
+    <div class="divider"></div>
+    <div><strong>E:</strong><br>m.ganova@mail.bg<br>mariela.ganova@gmail.com</div>
+    <div class="divider"></div>
+    <div><strong>T:</strong><br>+359897808730 (EU) (BG)</div>
   </div>
   <div class="social-icons">
     <a href="https://www.instagram.com/marielaganova" target="_blank"><i class="fab fa-instagram"></i></a>
     <a href="https://www.behance.net/marielaganova" target="_blank"><i class="fab fa-behance"></i></a>
-    <a href="https://www.pinterest.com/ganovamariela/" target="_blank"><i class="fab fa-pinterest"></i></a>
+    <a href="https://www.pinterest.com/ganovamariela" target="_blank"><i class="fab fa-pinterest"></i></a>
   </div>
-
+  <footer>
+    © 2025 Mariela Ganova. All rights reserved
+  </footer>
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
@@ -147,7 +179,4 @@
     }
   </script>
 </body>
-  <footer class="footer">
-    © 2025 Mariela Ganova. All rights reserved
-  </footer>
 </html>
