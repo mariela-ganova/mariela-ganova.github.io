@@ -83,32 +83,31 @@
       padding: 120px 5% 60px;
       gap: 60px;
       align-items: center;
-      animation: fadeIn 2s ease;
     }
     .photo {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      animation: fadeIn 2s ease;
+      animation: fadeInSlow 4.5s ease forwards;
     }
     .photo img {
       width: auto;
-      height: 103.5vh;
+      height: 119.5vh;
       object-fit: contain;
       opacity: 0;
-      animation: fadeInImage 2s ease forwards;
+      animation: fadeInSlow 4.5s ease forwards;
     }
     .text-section {
       flex: 1;
-      font-size: 0.812rem;
+      font-size: 0.7rem;
       text-align: right;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: 103.5vh;
+      height: 119.5vh;
       opacity: 0;
-      animation: fadeInText 2s ease 0.5s forwards;
+      animation: fadeInSlow 5s ease 1s forwards;
     }
     .text-section > div {
       display: flex;
@@ -144,12 +143,8 @@
       transform: translateX(-50%);
     }
 
-    @keyframes fadeInImage {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInText {
-      0% { opacity: 0; transform: translateY(20px); }
+    @keyframes fadeInSlow {
+      0% { opacity: 0; transform: translateY(30px); }
       100% { opacity: 1; transform: translateY(0); }
     }
   </style>
