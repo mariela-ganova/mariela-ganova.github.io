@@ -3,19 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Mariela Ganova</title>
+  <title>Mariela Ganova | Interior & Product Design</title>
   <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      background-color: #000;
-      color: #ccc;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
       font-family: 'Abel', sans-serif;
-      min-height: 100vh;
-      position: relative;
-      overflow-y: auto;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.35;
     }
     header {
       position: absolute;
@@ -26,7 +37,7 @@
       justify-content: space-between;
       padding: 1rem 2rem;
       align-items: center;
-      z-index: 1000;
+      z-index: 10;
     }
     .logo {
       width: 40px;
@@ -78,78 +89,58 @@
     .menu a:hover {
       color: #fff;
     }
-    .content {
-      display: flex;
-      padding: 120px 5% 60px;
-      gap: 60px;
-      align-items: center;
-    }
-    .photo {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      animation: fadeInSlow 4.5s ease forwards;
-    }
-    .photo img {
-      width: auto;
-      height: 119.5vh;
-      object-fit: contain;
-      opacity: 0;
-      animation: fadeInSlow 4.5s ease forwards;
-    }
-    .text-section {
-      flex: 1;
-      font-size: 0.7rem;
-      text-align: right;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 119.5vh;
-      opacity: 0;
-      animation: fadeInSlow 5s ease 1s forwards;
-    }
-    .text-section > div {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-    }
-    .text-section h2 {
-      font-size: 1rem;
-      color: #ccc;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
-    .text-section p {
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      line-height: 1.8;
-      color: #bbb;
-    }
-    .text-section hr {
-      border: none;
-      border-top: 1px solid #333;
-      margin: 20px 0;
-    }
-    footer {
-      text-align: center;
-      color: #aaa;
-      font-size: 0.8rem;
-      padding: 1rem;
+    .hero-text {
       position: absolute;
-      bottom: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: 1.5rem;
+      color: #fff;
+      letter-spacing: 2px;
+      animation: fadeIn 3.5s ease forwards;
+    }
+    .social-icons {
+      position: absolute;
+      bottom: 50px;
       left: 50%;
       transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      font-size: 1.3rem;
+      animation: fadeIn 4.5s ease forwards;
     }
-
-    @keyframes fadeInSlow {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
+    .social-icons a {
+      color: #ccc;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      color: #fff;
+    }
+    footer {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.7rem;
+      color: #aaa;
+      animation: fadeIn 5.5s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
+
+  <!-- Background video -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Header -->
   <header>
     <a href="index.html" class="logo"></a>
     <div class="icons">
@@ -161,6 +152,7 @@
       </div>
     </div>
   </header>
+
   <div class="menu" id="menu">
     <a href="index.html">0.1 HOMEPAGE</a>
     <a href="about.html">0.2 ABOUT</a>
@@ -173,27 +165,19 @@
     <a href="contact.html">0.9 CONTACT</a>
   </div>
 
-  <div class="content">
-    <div class="photo">
-      <img src="profile.jpg" alt="Mariela Ganova Portrait">
-    </div>
-    <div class="text-section">
-      <div>
-        <h2>PHILOSOPHY</h2>
-        <p>MARIELA GANOVA IS THE FOUNDER AND THE OWNER OF THE STUDIO AND SERVES AS ITS DIRECTOR AND CHIEF DESIGNER. MARIELA HAS A MASTER'S DEGREE IN ENGINEERING DESIGN FROM THE FORESTRY UNIVERSITY. IN THE COURSE OF HER PRACTICE AND WORK, SHE HAS BEEN AWARDED NUMEROUS AWARDS AND DISTINCTIONS. WE HAVE COMPLETED OVER 100 PROJECTS. COOPERATING WITH OUR STUDIO, YOU GET HIGH-QUALITY SERVICES AND COMFORTABLE SPACE THAT WILL BE RELEVANT FOR MANY YEARS TO COME. I BELIEVE DESIGN IS A TANGIBLE MANIFESTATION OF A CAPTURED FEELING.</p>
-        <hr>
-        <h2>OUR WORKS</h2>
-        <p>OUR STUDIO SPECIALIZES IN DESIGNING RESIDENTIAL, LUXURY APARTMENTS, OFFICES, AND COMMERCIAL SPACE. ALSO WE CREATE A DESIGN - PRODUCT DESIGN, THAT IS A VERY SPECIAL ELEMENT OF OUR WORK. WE VALUE AND FOCUS ON MINIMALIST AND FUNCTIONAL CREATION, BASED ON A VERY COMPLEX AND PRECISE DESIGN. DESIGNING IS AN ART TO US, AND WE ALWAYS ASPIRE TO LEAVE A DISTINCT IMPRINT AND NOTHING ELSE.</p>
-        <hr>
-        <h2>OUR VALUES</h2>
-        <p>OUR WORK LIVES AT THE INTERSECTION OF DESIGN AND CONTEMPORARY ART. OUR SOLUTIONS ARE FUNCTIONAL AND MODERN; THEY ARE AT THE HEART OF THE TRENDS.</p>
-        <hr>
-        <h2>OUR MISSION</h2>
-        <p>IT IS A PRIVILEGE TO DESIGN AND PLAN THE SPACE IN WHICH WE LIVE. WE TAKE THIS MISSION WITH GREAT HONOR AND BY THAT, WE LET OUR CREATIONS SHAPE US.</p>
-      </div>
-    </div>
+  <!-- Main title -->
+  <div class="hero-text">
+    INTERIOR AND PRODUCT DESIGN STUDIO
   </div>
 
+  <!-- Social icons -->
+  <div class="social-icons">
+    <a href="https://instagram.com/marielaganova" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://pinterest.com/ganovamariela" target="_blank"><i class="fab fa-pinterest"></i></a>
+    <a href="https://behance.net/marielaganova" target="_blank"><i class="fab fa-behance"></i></a>
+  </div>
+
+  <!-- Footer -->
   <footer>
     © 2025 Mariela Ganova. All rights reserved
   </footer>
@@ -204,5 +188,6 @@
       menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
     }
   </script>
+
 </body>
 </html>
