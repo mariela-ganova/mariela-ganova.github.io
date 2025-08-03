@@ -3,110 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About – Mariela Ganova Design</title>
+  <title>About - Mariela Ganova</title>
+  <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
       background-color: #000;
       color: #ccc;
-      font-family: 'Century Gothic', sans-serif;
-      height: 100vh;
-      overflow: hidden;
-    }
-    header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      font-family: 'Abel', sans-serif;
       display: flex;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      align-items: center;
-      z-index: 1000;
+      flex-direction: row;
+      min-height: 100vh;
     }
-    .logo {
-      width: 40px;
-      height: 40px;
-      background-color: #444;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-    .icons {
+    .left-section {
+      flex: 1;
+      background-color: #111;
       display: flex;
-      gap: 1rem;
       align-items: center;
+      justify-content: center;
+      padding: 2rem;
     }
-    .menu-toggle {
-      width: 25px;
-      height: 15px;
+    .right-section {
+      flex: 1;
+      padding: 4rem 3rem;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-    }
-    .menu-toggle span {
-      background-color: #ccc;
-      height: 2px;
-      width: 100%;
-      display: block;
-    }
-    .language {
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
-    .menu {
-      display: none;
-      position: absolute;
-      top: 60px;
-      right: 2rem;
-      background-color: #000;
-      border: 1px solid #333;
-      padding: 1rem;
-      z-index: 999;
-    }
-    .menu a {
-      display: block;
-      color: #ccc;
-      text-decoration: none;
-      margin-bottom: 0.5rem;
+      justify-content: center;
+      align-items: flex-end;
       font-size: 0.9rem;
+      color: #ccc;
+      text-transform: uppercase;
     }
-    .menu a:hover {
-      color: #fff;
+    .right-section div {
+      max-width: 90%;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: 1.5rem;
+    }
+    .right-section div:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .right-section strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+    .photo-placeholder {
+      width: 300px;
+      height: 400px;
+      background-color: #333;
     }
   </style>
 </head>
 <body>
-  <header>
-    <a href="index.html"><div class="logo"></div></a>
-    <div class="icons">
-      <div class="language">BG / EN</div>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </header>
-  <div class="menu" id="menu">
-    <a href="index.html">0.1 HOMEPAGE</a>
-    <a href="about.html">0.2 ABOUT</a>
-    <a href="interiors.html">0.3 INTERIORS</a>
-    <a href="exteriors.html">0.4 EXTERIORS</a>
-    <a href="products.html">0.5 PRODUCTS</a>
-    <a href="price.html">0.6 PRICE</a>
-    <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
-    <a href="awards.html">0.8 AWARDS</a>
-    <a href="press.html">0.9 PRESS</a>
-    <a href="contact.html">0.1.0 CONTACT</a>
+  <div class="left-section">
+    <div class="photo-placeholder"></div> <!-- replace with actual image -->
   </div>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
+  <div class="right-section">
+    <div>
+      <strong>PHILOSOPHY</strong>
+      MARIELA GANOVA IS THE FOUNDER AND DIRECTOR OF THE STUDIO. SHE HOLDS A MASTER’S DEGREE IN ENGINEERING DESIGN FROM THE FORESTRY UNIVERSITY. THROUGHOUT HER CAREER, SHE HAS RECEIVED NUMEROUS AWARDS AND DISTINCTIONS. OUR STUDIO HAS COMPLETED OVER 100 PROJECTS. BY WORKING WITH US, YOU RECEIVE HIGH-QUALITY SERVICES AND A SPACE THAT WILL REMAIN RELEVANT FOR YEARS TO COME.
+      I BELIEVE DESIGN IS A TANGIBLE MANIFESTATION OF A CAPTURED FEELING.
+    </div>
+    <div>
+      <strong>OUR WORKS</strong>
+      OUR STUDIO SPECIALIZES IN INTERIOR DESIGN FOR RESIDENTIAL SPACES, LUXURY APARTMENTS, OFFICES, AND COMMERCIAL ENVIRONMENTS. WE ALSO DEVELOP PRODUCT DESIGN — A DISTINCT AND ESSENTIAL PART OF OUR WORK. WE VALUE MINIMALIST AND FUNCTIONAL CREATION, SHAPED THROUGH COMPLEX AND PRECISE DESIGN. FOR US, DESIGN IS AN ART FORM THAT ALWAYS AIMS TO LEAVE A DISTINCT IMPRINT.
+    </div>
+    <div>
+      <strong>OUR VALUES</strong>
+      OUR WORK LIVES AT THE INTERSECTION OF DESIGN AND CONTEMPORARY ART. OUR SOLUTIONS ARE FUNCTIONAL, MODERN, AND DEEPLY IN TOUCH WITH CURRENT TRENDS.
+    </div>
+    <div>
+      <strong>OUR MISSION</strong>
+      IT IS A PRIVILEGE TO SHAPE THE SPACES WE LIVE IN. WE EMBRACE THIS RESPONSIBILITY WITH HONOR AND ALLOW OUR CREATIONS TO TRANSFORM US IN RETURN.
+    </div>
+  </div>
 </body>
 </html>
