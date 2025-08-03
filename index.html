@@ -12,7 +12,8 @@
       padding: 0;
       box-sizing: border-box;
     }
-    body, html {
+
+    html, body {
       height: 100%;
       font-family: 'Abel', sans-serif;
       overflow: hidden;
@@ -102,32 +103,37 @@
 
     .overlay {
       position: relative;
-      height: 100vh;
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
+      height: 100vh;
       color: #ccc;
-      text-align: center;
-      padding: 8vh 2rem 4vh;
-      animation: fadeIn 5s ease forwards;
       z-index: 1;
     }
 
-    .overlay h1 {
+    .center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      animation: fadeIn 5s ease forwards;
+    }
+
+    .center-text h1 {
       font-size: 1.8rem;
       text-transform: uppercase;
       letter-spacing: 2px;
-      margin-bottom: auto;
     }
 
     .bottom {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.2rem;
-      margin-top: auto;
+      gap: 1rem;
+      animation: fadeIn 5s ease forwards;
     }
 
     .social-icons {
@@ -187,7 +193,9 @@
   </header>
 
   <div class="overlay">
-    <h1>INTERIOR AND PRODUCT DESIGN STUDIO</h1>
+    <div class="center-text">
+      <h1>INTERIOR AND PRODUCT DESIGN STUDIO</h1>
+    </div>
     <div class="bottom">
       <div class="social-icons">
         <a href="https://instagram.com/marielaganova" target="_blank"><i class="fab fa-instagram"></i></a>
