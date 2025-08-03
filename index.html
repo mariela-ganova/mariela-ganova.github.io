@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mariela Ganova Design</title>
+  <title>About | Mariela Ganova</title>
   <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -15,6 +15,7 @@
       font-family: 'Abel', sans-serif;
       min-height: 100vh;
       position: relative;
+      overflow-y: auto;
     }
     header {
       position: absolute;
@@ -57,19 +58,6 @@
       font-size: 0.8rem;
       cursor: pointer;
     }
-    .center-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-    .center-text h1 {
-      font-size: 2rem;
-      letter-spacing: 2px;
-      color: #ccc;
-      font-family: 'Abel', sans-serif;
-    }
     .menu {
       display: none;
       position: absolute;
@@ -90,32 +78,74 @@
     .menu a:hover {
       color: #fff;
     }
-    .social-icons {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
+    .content {
       display: flex;
-      gap: 1.5rem;
+      padding: 120px 5% 60px;
+      gap: 60px;
+      align-items: center;
     }
-    .social-icons a {
+    .photo {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeInSlow 4.5s ease forwards;
+    }
+    .photo img {
+      width: auto;
+      height: 119.5vh;
+      object-fit: contain;
+      opacity: 0;
+      animation: fadeInSlow 4.5s ease forwards;
+    }
+    .text-section {
+      flex: 1;
+      font-size: 0.7rem;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 119.5vh;
+      opacity: 0;
+      animation: fadeInSlow 5s ease 1s forwards;
+    }
+    .text-section > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+    .text-section h2 {
+      font-size: 1rem;
       color: #ccc;
-      font-size: 1.2rem;
-      text-decoration: none;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
     }
-    .social-icons a:hover {
-      color: #fff;
+    .text-section p {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.8;
+      color: #bbb;
+    }
+    .text-section hr {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 20px 0;
     }
     footer {
       text-align: center;
       color: #aaa;
       font-size: 0.8rem;
-      padding: 0.5rem;
+      padding: 1rem;
       position: absolute;
-      bottom: 5px;
+      bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-      font-family: 'Abel', sans-serif;
+    }
+
+    @keyframes fadeInSlow {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -142,17 +172,32 @@
     <a href="awards.html">0.8 AWARDS & PRESS</a>
     <a href="contact.html">0.9 CONTACT</a>
   </div>
-  <div class="center-text">
-    <h1>INTERIOR AND PRODUCT DESIGN STUDIO</h1>
+
+  <div class="content">
+    <div class="photo">
+      <img src="profile.jpg" alt="Mariela Ganova Portrait">
+    </div>
+    <div class="text-section">
+      <div>
+        <h2>PHILOSOPHY</h2>
+        <p>MARIELA GANOVA IS THE FOUNDER AND THE OWNER OF THE STUDIO AND SERVES AS ITS DIRECTOR AND CHIEF DESIGNER. MARIELA HAS A MASTER'S DEGREE IN ENGINEERING DESIGN FROM THE FORESTRY UNIVERSITY. IN THE COURSE OF HER PRACTICE AND WORK, SHE HAS BEEN AWARDED NUMEROUS AWARDS AND DISTINCTIONS. WE HAVE COMPLETED OVER 100 PROJECTS. COOPERATING WITH OUR STUDIO, YOU GET HIGH-QUALITY SERVICES AND COMFORTABLE SPACE THAT WILL BE RELEVANT FOR MANY YEARS TO COME. I BELIEVE DESIGN IS A TANGIBLE MANIFESTATION OF A CAPTURED FEELING.</p>
+        <hr>
+        <h2>OUR WORKS</h2>
+        <p>OUR STUDIO SPECIALIZES IN DESIGNING RESIDENTIAL, LUXURY APARTMENTS, OFFICES, AND COMMERCIAL SPACE. ALSO WE CREATE A DESIGN - PRODUCT DESIGN, THAT IS A VERY SPECIAL ELEMENT OF OUR WORK. WE VALUE AND FOCUS ON MINIMALIST AND FUNCTIONAL CREATION, BASED ON A VERY COMPLEX AND PRECISE DESIGN. DESIGNING IS AN ART TO US, AND WE ALWAYS ASPIRE TO LEAVE A DISTINCT IMPRINT AND NOTHING ELSE.</p>
+        <hr>
+        <h2>OUR VALUES</h2>
+        <p>OUR WORK LIVES AT THE INTERSECTION OF DESIGN AND CONTEMPORARY ART. OUR SOLUTIONS ARE FUNCTIONAL AND MODERN; THEY ARE AT THE HEART OF THE TRENDS.</p>
+        <hr>
+        <h2>OUR MISSION</h2>
+        <p>IT IS A PRIVILEGE TO DESIGN AND PLAN THE SPACE IN WHICH WE LIVE. WE TAKE THIS MISSION WITH GREAT HONOR AND BY THAT, WE LET OUR CREATIONS SHAPE US.</p>
+      </div>
+    </div>
   </div>
-  <div class="social-icons">
-    <a href="https://www.instagram.com/marielaganova" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.behance.net/marielaganova" target="_blank"><i class="fab fa-behance"></i></a>
-    <a href="https://www.pinterest.com/ganovamariela" target="_blank"><i class="fab fa-pinterest"></i></a>
-  </div>
+
   <footer>
     © 2025 Mariela Ganova. All rights reserved
   </footer>
+
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
