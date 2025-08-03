@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About - Mariela Ganova</title>
+  <title>About | Mariela Ganova</title>
   <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -12,73 +13,164 @@
       background-color: #000;
       color: #ccc;
       font-family: 'Abel', sans-serif;
-      display: flex;
-      flex-direction: row;
       min-height: 100vh;
+      position: relative;
     }
-    .left-section {
-      flex: 1;
-      background-color: #111;
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
       display: flex;
+      justify-content: space-between;
+      padding: 1rem 2rem;
       align-items: center;
-      justify-content: center;
-      padding: 2rem;
+      z-index: 1000;
     }
-    .right-section {
-      flex: 1;
-      padding: 4rem 3rem;
+    .logo {
+      width: 40px;
+      height: 40px;
+      background-color: #444;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .icons {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .menu-toggle {
+      width: 25px;
+      height: 15px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: flex-end;
-      font-size: 0.9rem;
-      color: #ccc;
-      text-transform: uppercase;
+      justify-content: space-between;
+      cursor: pointer;
     }
-    .right-section div {
-      max-width: 90%;
-      margin-bottom: 2rem;
-      border-bottom: 1px solid #333;
-      padding-bottom: 1.5rem;
-    }
-    .right-section div:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-    }
-    .right-section strong {
+    .menu-toggle span {
+      background-color: #ccc;
+      height: 2px;
+      width: 100%;
       display: block;
+    }
+    .language {
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    .menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 2rem;
+      background-color: #000;
+      border: 1px solid #333;
+      padding: 1rem;
+      z-index: 999;
+    }
+    .menu a {
+      display: block;
+      color: #ccc;
+      text-decoration: none;
       margin-bottom: 0.5rem;
-      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
+    .menu a:hover {
+      color: #fff;
+    }
+    .content {
+      display: flex;
+      padding: 120px 5% 60px;
+      gap: 60px;
     }
     .photo-placeholder {
-      width: 300px;
-      height: 400px;
-      background-color: #333;
+      flex: 1;
+      background-color: #222;
+      height: 500px;
+    }
+    .text-section {
+      flex: 2;
+      font-size: 0.9rem;
+      text-align: right;
+    }
+    .text-section h2 {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+    .text-section p {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.8;
+      color: #bbb;
+    }
+    .text-section hr {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 20px 0;
+    }
+    footer {
+      text-align: center;
+      color: #aaa;
+      font-size: 0.8rem;
+      padding: 1rem;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
     }
   </style>
 </head>
 <body>
-  <div class="left-section">
-    <div class="photo-placeholder"></div> <!-- replace with actual image -->
+  <header>
+    <a href="index.html" class="logo"></a>
+    <div class="icons">
+      <div class="language">BG / EN</div>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+  <div class="menu" id="menu">
+    <a href="index.html">0.1 HOMEPAGE</a>
+    <a href="about.html">0.2 ABOUT</a>
+    <a href="interiors.html">0.3 INTERIORS</a>
+    <a href="exteriors.html">0.4 EXTERIORS</a>
+    <a href="products.html">0.5 PRODUCTS</a>
+    <a href="price.html">0.6 PRICE</a>
+    <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
+    <a href="awards.html">0.8 AWARDS & PRESS</a>
+    <a href="contact.html">0.9 CONTACT</a>
   </div>
-  <div class="right-section">
-    <div>
-      <strong>PHILOSOPHY</strong>
-      MARIELA GANOVA IS THE FOUNDER AND DIRECTOR OF THE STUDIO. SHE HOLDS A MASTER’S DEGREE IN ENGINEERING DESIGN FROM THE FORESTRY UNIVERSITY. THROUGHOUT HER CAREER, SHE HAS RECEIVED NUMEROUS AWARDS AND DISTINCTIONS. OUR STUDIO HAS COMPLETED OVER 100 PROJECTS. BY WORKING WITH US, YOU RECEIVE HIGH-QUALITY SERVICES AND A SPACE THAT WILL REMAIN RELEVANT FOR YEARS TO COME.
-      I BELIEVE DESIGN IS A TANGIBLE MANIFESTATION OF A CAPTURED FEELING.
-    </div>
-    <div>
-      <strong>OUR WORKS</strong>
-      OUR STUDIO SPECIALIZES IN INTERIOR DESIGN FOR RESIDENTIAL SPACES, LUXURY APARTMENTS, OFFICES, AND COMMERCIAL ENVIRONMENTS. WE ALSO DEVELOP PRODUCT DESIGN — A DISTINCT AND ESSENTIAL PART OF OUR WORK. WE VALUE MINIMALIST AND FUNCTIONAL CREATION, SHAPED THROUGH COMPLEX AND PRECISE DESIGN. FOR US, DESIGN IS AN ART FORM THAT ALWAYS AIMS TO LEAVE A DISTINCT IMPRINT.
-    </div>
-    <div>
-      <strong>OUR VALUES</strong>
-      OUR WORK LIVES AT THE INTERSECTION OF DESIGN AND CONTEMPORARY ART. OUR SOLUTIONS ARE FUNCTIONAL, MODERN, AND DEEPLY IN TOUCH WITH CURRENT TRENDS.
-    </div>
-    <div>
-      <strong>OUR MISSION</strong>
-      IT IS A PRIVILEGE TO SHAPE THE SPACES WE LIVE IN. WE EMBRACE THIS RESPONSIBILITY WITH HONOR AND ALLOW OUR CREATIONS TO TRANSFORM US IN RETURN.
+
+  <div class="content">
+    <div class="photo-placeholder"></div>
+    <div class="text-section">
+      <h2>PHILOSOPHY</h2>
+      <p>MARIELA GANOVA IS THE FOUNDER AND THE OWNER OF THE STUDIO AND SERVES AS ITS DIRECTOR AND CHIEF DESIGNER. MARIELA HAS A MASTER'S DEGREE IN ENGINEERING DESIGN FROM THE FORESTRY UNIVERSITY. IN THE COURSE OF HER PRACTICE AND WORK, SHE HAS BEEN AWARDED NUMEROUS AWARDS AND DISTINCTIONS. WE HAVE COMPLETED OVER 100 PROJECTS. COOPERATING WITH OUR STUDIO, YOU GET HIGH-QUALITY SERVICES AND COMFORTABLE SPACE THAT WILL BE RELEVANT FOR MANY YEARS TO COME. I BELIEVE DESIGN IS A TANGIBLE MANIFESTATION OF A CAPTURED FEELING.</p>
+      <hr>
+      <h2>OUR WORKS</h2>
+      <p>OUR STUDIO SPECIALIZES IN DESIGNING RESIDENTIAL, LUXURY APARTMENTS, OFFICES, AND COMMERCIAL SPACE. ALSO WE CREATE A DESIGN - PRODUCT DESIGN, THAT IS A VERY SPECIAL ELEMENT OF OUR WORK. WE VALUE AND FOCUS ON MINIMALIST AND FUNCTIONAL CREATION, BASED ON A VERY COMPLEX AND PRECISE DESIGN. DESIGNING IS AN ART TO US, AND WE ALWAYS ASPIRE TO LEAVE A DISTINCT IMPRINT AND NOTHING ELSE.</p>
+      <hr>
+      <h2>OUR VALUES</h2>
+      <p>OUR WORK LIVES AT THE INTERSECTION OF DESIGN AND CONTEMPORARY ART. OUR SOLUTIONS ARE FUNCTIONAL AND MODERN; THEY ARE AT THE HEART OF THE TRENDS.</p>
+      <hr>
+      <h2>OUR MISSION</h2>
+      <p>IT IS A PRIVILEGE TO DESIGN AND PLAN THE SPACE IN WHICH WE LIVE. WE TAKE THIS MISSION WITH GREAT HONOR AND BY THAT, WE LET OUR CREATIONS SHAPE US.</p>
     </div>
   </div>
+
+  <footer>
+    © 2025 Mariela Ganova. All rights reserved
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>
