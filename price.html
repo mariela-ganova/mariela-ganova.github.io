@@ -41,17 +41,37 @@
     }
     .menu-toggle {
       width: 25px;
-      height: 15px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      height: 20px;
+      position: relative;
       cursor: pointer;
+      transition: all 0.3s ease;
     }
     .menu-toggle span {
-      background-color: #ccc;
+      position: absolute;
       height: 2px;
       width: 100%;
-      display: block;
+      background-color: #ccc;
+      transition: all 0.3s ease;
+    }
+    .menu-toggle span:nth-child(1) {
+      top: 0;
+    }
+    .menu-toggle span:nth-child(2) {
+      top: 9px;
+    }
+    .menu-toggle span:nth-child(3) {
+      top: 18px;
+    }
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 9px;
+    }
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 9px;
     }
     .language {
       font-size: 0.8rem;
@@ -78,8 +98,8 @@
       color: #fff;
     }
     main {
-      padding: 120px 10% 40px;
-      text-align: right;
+      padding: 120px 2rem 40px;
+      text-align: left;
     }
     details {
       margin-bottom: 1.5rem;
@@ -108,7 +128,7 @@
     <a href="index.html"><div class="logo"></div></a>
     <div class="icons">
       <div class="language">BG / EN</div>
-      <div class="menu-toggle" onclick="toggleMenu()">
+      <div class="menu-toggle" onclick="toggleMenu(this)">
         <span></span>
         <span></span>
         <span></span>
@@ -153,14 +173,31 @@
 
       <div class="sub-summary">0.1.2. INTERIOR DESIGN PROJECT + DESIGN SUPERVISION  60 E / m2</div>
       <div class="sub-details">
-        (включва всичко от предишната точка + supervision детайли)
-        <br>Assistance in the selection of furniture, lamps, sanitary ware, doors, paints, colors, textiles<br>
+        Site measurement<br>
+        Redevelopment plan<br>
+        Concept development<br>
+        Plan for dismantling and installing walls, ceilings, etc.<br>
+        Furnishing plan<br>
+        Flooring plan<br>
+        Wall plan and details<br>
+        Ceiling plan and details<br>
+        Door and window plan<br>
+        Soffit Electrical task<br>
+        Plumbing task Ventilation and air conditioning and heating task<br>
+        Audio and video sound task<br>
+        Lighting specifications<br>
+        Sanitary faience specifications<br>
+        Specifications of ready-made selected furniture<br>
+        Furniture drawings<br>
+        3D Vizualization - up to 2 corrections
+        </div>
+        Assistance in the selection of furniture, lamps, sanitary ware, doors, paints, colors, textiles<br>
         Calculation of project specifications<br>
         Consultation and communication with contractors for construction and renovation activities<br>
         Consultation and communication with contractors for furniture under the project<br>
         Organization of orders and deliveries of furniture, lamps, tiles, sanitary ware<br>
         Coordination of the work process<br>
-        Control visits to the site when convenient for the designer and the client
+        Control visits to the site when convenient for the designer and the client<br>
       </div>
     </details>
 
@@ -179,17 +216,92 @@
         3D visualization of facade
       </div>
       <div class="sub-summary">0.2.2 ARCHITECTURAL DESIGN  500 - 1000 m2  80 E/m2</div>
-      <div class="sub-details">(същото съдържание като по-горе)</div>
+      <div class="sub-details">
+        Development of a general plan of the building<br>
+        Zoning of site<br>
+        Development of a facade solution for the building (up to 3 variants of planning and facade solutions)<br>
+        Zoning of a yard (without a definite landscape, performed by a landscape architect) (up to 2 edits)<br>
+        Ideas for a fence and a gate<br>
+        Specification of finishing materials<br>
+        Outdoor lighting conception<br>
+        Outdoor zone concept development<br>
+        3D visualization of facade
+      </div>
       <div class="sub-summary">0.2.3 ARCHITECTURAL DESIGN MORE THAN 1000 m2  ON REQUEST</div>
     </details>
 
     <details>
       <summary>0.3. INTERIOR & ARCHITECTURAL DESIGN</summary>
       <div class="sub-summary">0.3.1 INTERIOR DESIGN PROJECT & ARCHITECTURAL DESIGN CONCEPTION 80 E / m2</div>
-      <div class="sub-details">(съдържа пълното комбинирано описание от интериорен и архитектурен дизайн)</div>
+      <div class="sub-details">
+        Site measurement<br>
+        Redevelopment plan<br>
+        Concept development<br>
+        Plan for dismantling and installing walls, ceilings, etc.<br>
+        Furnishing plan<br>
+        Flooring plan<br>
+        Wall plan and details<br>
+        Ceiling plan and details<br>
+        Door and window plan<br>
+        Soffit Electrical task<br>
+        Plumbing task Ventilation and air conditioning and heating task<br>
+        Audio and video sound task<br>
+        Lighting specifications<br>
+        Sanitary faience specifications<br>
+        Specifications of ready-made selected furniture<br>
+        Furniture drawings<br>
+        3D Vizualization - up to 2 corrections
+      </div>
+        Development of a general plan of the building<br>
+        Zoning of site<br>
+        Development of a facade solution for the building (up to 3 variants of planning and facade solutions)<br>
+        Zoning of a yard (without a definite landscape, performed by a landscape architect) (up to 2 edits)<br>
+        Ideas for a fence and a gate<br>
+        Specification of finishing materials<br>
+        Outdoor lighting conception<br>
+        Outdoor zone concept development<br>
+        3D visualization of facade
+      </div>
 
       <div class="sub-summary">0.3.2 INTERIOR DESIGN PROJECT & ARCHITECTURAL DESIGN CONCEPTION + SUPERVISION 100 E / m2</div>
-      <div class="sub-details">(включва всичко от 0.3.1 + supervision детайли)</div>
+       <div class="sub-details">
+        Site measurement<br>
+        Redevelopment plan<br>
+        Concept development<br>
+        Plan for dismantling and installing walls, ceilings, etc.<br>
+        Furnishing plan<br>
+        Flooring plan<br>
+        Wall plan and details<br>
+        Ceiling plan and details<br>
+        Door and window plan<br>
+        Soffit Electrical task<br>
+        Plumbing task Ventilation and air conditioning and heating task<br>
+        Audio and video sound task<br>
+        Lighting specifications<br>
+        Sanitary faience specifications<br>
+        Specifications of ready-made selected furniture<br>
+        Furniture drawings<br>
+        3D Vizualization - up to 2 corrections
+      </div>
+        Development of a general plan of the building<br>
+        Zoning of site<br>
+        Development of a facade solution for the building (up to 3 variants of planning and facade solutions)<br>
+        Zoning of a yard (without a definite landscape, performed by a landscape architect) (up to 2 edits)<br>
+        Ideas for a fence and a gate<br>
+        Specification of finishing materials<br>
+        Outdoor lighting conception<br>
+        Outdoor zone concept development<br>
+        3D visualization of facade
+      </div>
+        Assistance in the selection of furniture, lamps, sanitary ware, doors, paints, colors, textiles<br>
+        Calculation of project specifications<br>
+        Consultation and communication with contractors for construction and renovation activities<br>
+        Consultation and communication with contractors for furniture under the project<br>
+        Organization of orders and deliveries of furniture, lamps, tiles, sanitary ware<br>
+        Coordination of the work process<br>
+        Control visits to the site when convenient for the designer and the client<br>
+      </div>
+        
     </details>
 
     <details>
