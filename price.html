@@ -310,10 +310,14 @@
     </details>
   </main>
 
+ </main>
+
   <script>
-    function toggleMenu() {
+    function toggleMenu(button) {
       const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      const isVisible = menu.style.display === 'block';
+      menu.style.display = isVisible ? 'none' : 'block';
+      button.classList.toggle('active');
     }
   </script>
 </body>
