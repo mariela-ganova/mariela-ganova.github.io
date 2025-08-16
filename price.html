@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -109,6 +109,20 @@
       font-size: 1.2rem;
       cursor: pointer;
       margin-bottom: 0.5rem;
+      list-style: none;
+      position: relative;
+      padding-left: 25px;
+    }
+    summary::before {
+      content: "+";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+    details[open] summary::before {
+      content: "-";
     }
     .sub-summary {
       font-size: 1rem;
@@ -119,7 +133,11 @@
       margin-left: 1rem;
       font-size: 0.9rem;
       color: #aaa;
-      line-height: 1.6;
+      line-height: 2;
+    }
+    .spacer {
+      margin-bottom: 1rem;
+      display: block;
     }
   </style>
 </head>
@@ -143,14 +161,15 @@
     <a href="products.html">0.5 PRODUCTS</a>
     <a href="price.html">0.6 PRICE</a>
     <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
-    <a href="awards.html">0.8 AWARDS & PRESS</a>
+    <a href="awards.html">0.8 AWARDS&PRESS</a>
     <a href="contact.html">0.9 CONTACT</a>
   </div>
 
   <main>
     <details open>
       <summary>0.1. INTERIOR DESIGN</summary>
-      <div class="sub-summary">0.1.1. INTERIOR DESIGN PROJECT   50 E / m2</div>
+<div class="sub-details">
+      0.1.1. INTERIOR DESIGN PROJECT                50 E / m2<span class="spacer"></span>
       <div class="sub-details">
         Site measurement<br>
         Redevelopment plan<br>
