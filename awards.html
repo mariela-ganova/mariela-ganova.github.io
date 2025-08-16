@@ -25,16 +25,53 @@
       position: absolute;
       top: 0;
       left: 0;
+      z-index: 1000;
     }
     .logo {
-      font-size: 1.5rem;
-      color: #fff;
-      text-decoration: none;
+      width: 40px;
+      height: 40px;
+      background-color: #444;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .icons {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .menu-toggle {
+      width: 25px;
+      height: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      background-color: #ccc;
+      height: 2px;
+      width: 100%;
+      display: block;
     }
     .menu {
-      font-size: 2rem;
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 2rem;
+      background-color: #000;
+      border: 1px solid #333;
+      padding: 1rem;
+      z-index: 999;
+    }
+    .menu a {
+      display: block;
+      color: #ccc;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .menu a:hover {
       color: #fff;
-      cursor: pointer;
     }
     .main-content {
       flex: 1;
@@ -44,30 +81,53 @@
     }
     .container {
       display: flex;
-      gap: 18rem; /* още по-голямо разстояние между двете думи */
+      gap: 20rem; /* по-голямо разстояние между двете думи */
     }
     .btn-link {
-      font-size: 1.875rem; /* 25% по-малък шрифт спрямо 2.5rem */
+      font-size: 1.875rem; /* 25% по-малък шрифт */
       color: #444; /* по-тъмно сив цвят */
       text-decoration: none;
       border: none;
       transition: all 0.3s ease;
     }
     .btn-link:hover {
-      color: #fff; /* при hover стават бели */
+      color: #fff;
     }
   </style>
 </head>
 <body>
   <header>
-    <a href="index.html" class="logo">LOGO</a>
-    <div class="menu">☰</div>
+    <a href="index.html"><div class="logo"></div></a>
+    <div class="icons">
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
   </header>
+  <div class="menu" id="menu">
+    <a href="index.html">0.1 HOMEPAGE</a>
+    <a href="about.html">0.2 ABOUT</a>
+    <a href="interiors.html">0.3 INTERIORS</a>
+    <a href="exteriors.html">0.4 EXTERIORS</a>
+    <a href="products.html">0.5 PRODUCTS</a>
+    <a href="price.html">0.6 PRICE</a>
+    <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
+    <a href="awards.html">0.8 AWARDS & PRESS</a>
+    <a href="contact.html">0.9 CONTACT</a>
+  </div>
   <div class="main-content">
     <div class="container">
       <a href="awards-list.html" class="btn-link">AWARDS</a>
       <a href="press-list.html" class="btn-link">PRESS</a>
     </div>
   </div>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>
