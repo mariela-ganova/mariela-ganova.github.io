@@ -3,19 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>press – Mariela Ganova Design</title>
   <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background-color: #000;
+      background: #000;
       color: #fff;
       font-family: 'Abel', sans-serif;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
+      overflow: hidden;
     }
 
     header {
@@ -75,25 +71,48 @@
     .menu a:hover {
       color: #fff;
     }
-    .main-content {
-      flex: 1;
+
+    /* Основен контейнер – средна лента */
+    .carousel-wrapper {
+      height: 100vh;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+    }
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 33vh; /* 1/3 от екрана */
+      overflow: hidden;
+    }
+    .carousel-track {
+      display: flex;
+      animation: scroll 20s linear infinite alternate;
+    }
+    .carousel-item {
+      flex: 0 0 auto;
+      margin: 0 1rem;
       text-align: center;
-      padding: 2rem;
     }
-    h1 {
-      font-size: 2rem;
-      letter-spacing: 0.2rem;
-      color: #fff;
-      margin-bottom: 1rem;
+    .carousel-item img {
+      height: 100%;
+      filter: grayscale(100%);
+      transition: filter 0.4s ease;
+      cursor: pointer;
     }
-    p {
-      color: #aaa;
-      font-size: 1rem;
-      max-width: 600px;
-      margin: auto;
+    .carousel-item img:hover {
+      filter: grayscale(0%);
+    }
+    .caption {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    /* Анимация за движение */
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
   </style>
 </head>
@@ -119,11 +138,52 @@
     <a href="awards-press.html">0.8 AWARDS & PRESS</a>
     <a href="contact.html">0.9 CONTACT</a>
   </div>
-  <div class="main-content">
-    <main>
-      
-      <p>____</p>
-    </main>
+
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <div class="carousel-track">
+        <!-- Картинка 1 -->
+        <div class="carousel-item">
+          <a href="press-detail1.html">
+            <img src="images/press1-bw.jpg" alt="Press 1">
+          </a>
+          <div class="caption">Publication 1</div>
+        </div>
+        <!-- Картинка 2 -->
+        <div class="carousel-item">
+          <a href="press-detail2.html">
+            <img src="images/press2-bw.jpg" alt="Press 2">
+          </a>
+          <div class="caption">Publication 2</div>
+        </div>
+        <!-- Картинка 3 -->
+        <div class="carousel-item">
+          <a href="press-detail3.html">
+            <img src="images/press3-bw.jpg" alt="Press 3">
+          </a>
+          <div class="caption">Publication 3</div>
+        </div>
+        <!-- Дублиране за безкраен ефект -->
+        <div class="carousel-item">
+          <a href="press-detail1.html">
+            <img src="images/press1-bw.jpg" alt="Press 1">
+          </a>
+          <div class="caption">Publication 1</div>
+        </div>
+        <div class="carousel-item">
+          <a href="press-detail2.html">
+            <img src="images/press2-bw.jpg" alt="Press 2">
+          </a>
+          <div class="caption">Publication 2</div>
+        </div>
+        <div class="carousel-item">
+          <a href="press-detail3.html">
+            <img src="images/press3-bw.jpg" alt="Press 3">
+          </a>
+          <div class="caption">Publication 3</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
