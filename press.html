@@ -72,7 +72,7 @@
       color: #fff;
     }
 
-    /* Централна галерия */
+   
     .carousel-wrapper {
       height: 100vh;
       display: flex;
@@ -82,7 +82,7 @@
     .carousel {
       position: relative;
       width: 100%;
-      height: 33vh; /* 1/3 от екрана */
+      height: 33vh;
       overflow: hidden;
     }
     .carousel-track {
@@ -133,7 +133,8 @@
     <a href="contact.html">0.9 CONTACT</a>
   </div>
 
-  <div class="carousel-wrapper">
+  
+ <div class="carousel-wrapper">
     <div class="carousel">
       <div class="carousel-track" id="carouselTrack">
         <!-- Картинка 1 -->
@@ -193,9 +194,9 @@
     document.addEventListener("mousemove", (e) => {
       const center = window.innerWidth / 2;
       if (e.clientX > center + 100) {
-        speed = -3; // движение наляво
+        speed = -1; // по-бавно наляво
       } else if (e.clientX < center - 100) {
-        speed = 3; // движение надясно
+        speed = 1; // по-бавно надясно
       } else {
         speed = 0; // спиране
       }
@@ -220,3 +221,4 @@
   </script>
 </body>
 </html>
+
