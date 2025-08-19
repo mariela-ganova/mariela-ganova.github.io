@@ -134,7 +134,7 @@
   </div>
 
   
- <div class="carousel-wrapper">
+<div class="carousel-wrapper">
     <div class="carousel">
       <div class="carousel-track" id="carouselTrack">
         <!-- Картинка 1 -->
@@ -194,9 +194,9 @@
     document.addEventListener("mousemove", (e) => {
       const center = window.innerWidth / 2;
       if (e.clientX > center + 100) {
-        speed = -1; // по-бавно наляво
+        speed = -0.5; // по-бавно наляво
       } else if (e.clientX < center - 100) {
-        speed = 1; // по-бавно надясно
+        speed = 0.5; // по-бавно надясно
       } else {
         speed = 0; // спиране
       }
@@ -221,4 +221,3 @@
   </script>
 </body>
 </html>
-
