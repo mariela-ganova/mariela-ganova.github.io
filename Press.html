@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Press – Mariela Ganova Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -15,6 +17,7 @@
       display: flex;
       flex-direction: column;
     }
+
     header {
       position: absolute;
       top: 0;
@@ -24,7 +27,7 @@
       justify-content: space-between;
       padding: 1rem 2rem;
       align-items: center;
-      z-index: 1000;
+      z-index: 10;
     }
     .logo {
       width: 40px;
@@ -52,10 +55,6 @@
       width: 100%;
       display: block;
     }
-    .language {
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
     .menu {
       display: none;
       position: absolute;
@@ -76,13 +75,32 @@
     .menu a:hover {
       color: #fff;
     }
+    .main-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      letter-spacing: 0.2rem;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    p {
+      color: #aaa;
+      font-size: 1rem;
+      max-width: 600px;
+      margin: auto;
+    }
   </style>
 </head>
 <body>
   <header>
     <a href="index.html"><div class="logo"></div></a>
     <div class="icons">
-      <div class="language">BG / EN</div>
       <div class="menu-toggle" onclick="toggleMenu()">
         <span></span>
         <span></span>
@@ -98,14 +116,21 @@
     <a href="products.html">0.5 PRODUCTS</a>
     <a href="price.html">0.6 PRICE</a>
     <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
-    <a href="awards.html">0.8 AWARDS & PRESS</a>
-    <a href="contact.html">0.9 CONTACT</a>
+    <a href="awards.html">0.8 AWARDS</a>
+    <a href="press.html">0.9 PRESS</a>
+    <a href="contact.html">1.0 CONTACT</a>
+  </div>
+  <div class="main-content">
+    <main>
+      <h1>PRESS</h1>
+      <p>____</p>
+    </main>
   </div>
 
   <script>
     function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      const menu = document.getElementById("menu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
     }
   </script>
 </body>
