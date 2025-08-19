@@ -72,7 +72,7 @@
       color: #fff;
     }
 
-   
+    /* Централна галерия */
     .carousel-wrapper {
       height: 100vh;
       display: flex;
@@ -82,7 +82,7 @@
     .carousel {
       position: relative;
       width: 100%;
-      height: 33vh;
+      height: 33vh; 
       overflow: hidden;
     }
     .carousel-track {
@@ -128,53 +128,24 @@
     <a href="exteriors.html">0.4 EXTERIORS</a>
     <a href="products.html">0.5 PRODUCTS</a>
     <a href="price.html">0.6 PRICE</a>
-   <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
-    <a href="awards.html">0.8 AWARDS & PRESS</a>
+    <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
+    <a href="awards-press.html">0.8 AWARDS & PRESS</a>
     <a href="contact.html">0.9 CONTACT</a>
   </div>
 
-  
-<div class="carousel-wrapper">
-    <div class="carousel">
+  <div class="carousel-wrapper">
+    <div class="carousel" id="carousel">
       <div class="carousel-track" id="carouselTrack">
-        <!-- Картинка 1 -->
         <div class="carousel-item">
-          <a href="press-detail1.html">
-            <img src="images/press1.jpg" alt="Press 1">
-          </a>
-          <div class="caption">Publication 1</div>
-        </div>
-        <!-- Картинка 2 -->
-        <div class="carousel-item">
-          <a href="press-detail2.html">
-            <img src="images/press2.jpg" alt="Press 2">
-          </a>
-          <div class="caption">Publication 2</div>
-        </div>
-        <!-- Картинка 3 -->
-        <div class="carousel-item">
-          <a href="press-detail3.html">
-            <img src="images/press3.jpg" alt="Press 3">
-          </a>
-          <div class="caption">Publication 3</div>
-        </div>
-        <!-- Дублираме за безкраен ефект -->
-        <div class="carousel-item">
-          <a href="press-detail1.html">
-            <img src="images/press1.jpg" alt="Press 1">
-          </a>
+          <a href="publication1.html"><img src="img1.jpg" alt="Publication 1"></a>
           <div class="caption">Publication 1</div>
         </div>
         <div class="carousel-item">
-          <a href="press-detail2.html">
-            <img src="images/press2.jpg" alt="Press 2">
-          </a>
+          <a href="publication2.html"><img src="img2.jpg" alt="Publication 2"></a>
           <div class="caption">Publication 2</div>
         </div>
         <div class="carousel-item">
-          <a href="press-detail3.html">
-            <img src="images/press3.jpg" alt="Press 3">
-          </a>
+          <a href="publication3.html"><img src="img3.jpg" alt="Publication 3"></a>
           <div class="caption">Publication 3</div>
         </div>
       </div>
@@ -182,42 +153,40 @@
   </div>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    const track = document.getElementById('carouselTrack');
+    const carousel = document.getElementById('carousel');
+    let offset = 0;
+    let direction = 0;
+    let animationId;
+
+    function animate() {
+      offset += direction * 0.5; // скорост на движение
+      track.style.transform = `translateX(${offset}px)`;
+      animationId = requestAnimationFrame(animate);
     }
 
-    const track = document.getElementById("carouselTrack");
-    let offset = 0;
-    let speed = 0;
-
-    document.addEventListener("mousemove", (e) => {
-      const center = window.innerWidth / 2;
-      if (e.clientX > center + 100) {
-        speed = -0.5; // по-бавно наляво
-      } else if (e.clientX < center - 100) {
-        speed = 0.5; // по-бавно надясно
+    carousel.addEventListener('mousemove', (e) => {
+      const rect = carousel.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      if (x < rect.width / 2) {
+        direction = 1; // наляво
+        if (!animationId) animate();
       } else {
-        speed = 0; // спиране
+        direction = -1; // надясно
+        if (!animationId) animate();
       }
     });
 
-    function animate() {
-      offset += speed;
-      const trackWidth = track.scrollWidth;
-      const containerWidth = track.parentElement.offsetWidth;
+    carousel.addEventListener('mouseleave', () => {
+      direction = 0;
+      cancelAnimationFrame(animationId);
+      animationId = null;
+    });
 
-      // Loop ефект
-      if (offset < -trackWidth / 2) {
-        offset = 0;
-      } else if (offset > 0) {
-        offset = -trackWidth / 2;
-      }
-
-      track.style.transform = `translateX(${offset}px)`;
-      requestAnimationFrame(animate);
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
     }
-    animate();
   </script>
 </body>
 </html>
