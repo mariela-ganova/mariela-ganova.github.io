@@ -72,7 +72,7 @@
       color: #fff;
     }
 
-    /* Основен контейнер – средна лента */
+    /* Централна галерия */
     .carousel-wrapper {
       height: 100vh;
       display: flex;
@@ -87,7 +87,7 @@
     }
     .carousel-track {
       display: flex;
-      animation: scroll 20s linear infinite alternate;
+      transition: transform 0.1s linear;
     }
     .carousel-item {
       flex: 0 0 auto;
@@ -107,12 +107,6 @@
       margin-top: 0.5rem;
       font-size: 0.9rem;
       color: #ccc;
-    }
-
-    /* Анимация за движение */
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
     }
   </style>
 </head>
@@ -134,51 +128,51 @@
     <a href="exteriors.html">0.4 EXTERIORS</a>
     <a href="products.html">0.5 PRODUCTS</a>
     <a href="price.html">0.6 PRICE</a>
-     <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
-    <a href="awards-press.html">0.8 AWARDS & PRESS</a>
+   <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
+    <a href="awards.html">0.8 AWARDS & PRESS</a>
     <a href="contact.html">0.9 CONTACT</a>
   </div>
 
   <div class="carousel-wrapper">
     <div class="carousel">
-      <div class="carousel-track">
+      <div class="carousel-track" id="carouselTrack">
         <!-- Картинка 1 -->
         <div class="carousel-item">
           <a href="press-detail1.html">
-            <img src="images/press1-bw.jpg" alt="Press 1">
+            <img src="images/press1.jpg" alt="Press 1">
           </a>
           <div class="caption">Publication 1</div>
         </div>
         <!-- Картинка 2 -->
         <div class="carousel-item">
           <a href="press-detail2.html">
-            <img src="images/press2-bw.jpg" alt="Press 2">
+            <img src="images/press2.jpg" alt="Press 2">
           </a>
           <div class="caption">Publication 2</div>
         </div>
         <!-- Картинка 3 -->
         <div class="carousel-item">
           <a href="press-detail3.html">
-            <img src="images/press3-bw.jpg" alt="Press 3">
+            <img src="images/press3.jpg" alt="Press 3">
           </a>
           <div class="caption">Publication 3</div>
         </div>
-        <!-- Дублиране за безкраен ефект -->
+        <!-- Дублираме за безкраен ефект -->
         <div class="carousel-item">
           <a href="press-detail1.html">
-            <img src="images/press1-bw.jpg" alt="Press 1">
+            <img src="images/press1.jpg" alt="Press 1">
           </a>
           <div class="caption">Publication 1</div>
         </div>
         <div class="carousel-item">
           <a href="press-detail2.html">
-            <img src="images/press2-bw.jpg" alt="Press 2">
+            <img src="images/press2.jpg" alt="Press 2">
           </a>
           <div class="caption">Publication 2</div>
         </div>
         <div class="carousel-item">
           <a href="press-detail3.html">
-            <img src="images/press3-bw.jpg" alt="Press 3">
+            <img src="images/press3.jpg" alt="Press 3">
           </a>
           <div class="caption">Publication 3</div>
         </div>
@@ -191,6 +185,38 @@
       const menu = document.getElementById("menu");
       menu.style.display = menu.style.display === "block" ? "none" : "block";
     }
+
+    const track = document.getElementById("carouselTrack");
+    let offset = 0;
+    let speed = 0;
+
+    document.addEventListener("mousemove", (e) => {
+      const center = window.innerWidth / 2;
+      if (e.clientX > center + 100) {
+        speed = -3; // движение наляво
+      } else if (e.clientX < center - 100) {
+        speed = 3; // движение надясно
+      } else {
+        speed = 0; // спиране
+      }
+    });
+
+    function animate() {
+      offset += speed;
+      const trackWidth = track.scrollWidth;
+      const containerWidth = track.parentElement.offsetWidth;
+
+      // Loop ефект
+      if (offset < -trackWidth / 2) {
+        offset = 0;
+      } else if (offset > 0) {
+        offset = -trackWidth / 2;
+      }
+
+      track.style.transform = `translateX(${offset}px)`;
+      requestAnimationFrame(animate);
+    }
+    animate();
   </script>
 </body>
 </html>
