@@ -96,17 +96,27 @@
     }
     .carousel-item img {
       height: 100%;
-      filter: grayscale(100%);
-      transition: filter 0.4s ease;
+      transition: opacity 0.4s ease;
       cursor: pointer;
+      display: block;
     }
-    .carousel-item img:hover {
-      filter: grayscale(0%);
+    .carousel-item img.color {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+    .carousel-item:hover img.color {
+      opacity: 1;
     }
     .caption {
       margin-top: 0.5rem;
       font-size: 0.9rem;
       color: #ccc;
+    }
+    .carousel-item-inner {
+      position: relative;
+      display: inline-block;
     }
   </style>
 </head>
@@ -137,21 +147,69 @@
     <div class="carousel" id="carousel">
       <div class="carousel-track" id="carouselTrack">
         <div class="carousel-item">
-          <a href="publication1.html"><img src="img1.jpg" alt="Publication 1"></a>
+          <a href="publication1.html">
+            <div class="carousel-item-inner">
+              <img src="img1-bw.jpg" alt="Publication 1">
+              <img src="img1-color.jpg" class="color" alt="Publication 1">
+            </div>
+          </a>
           <div class="caption">Publication 1</div>
         </div>
         <div class="carousel-item">
-          <a href="publication2.html"><img src="img2.jpg" alt="Publication 2"></a>
+          <a href="publication2.html">
+            <div class="carousel-item-inner">
+              <img src="img2-bw.jpg" alt="Publication 2">
+              <img src="img2-color.jpg" class="color" alt="Publication 2">
+            </div>
+          </a>
           <div class="caption">Publication 2</div>
         </div>
         <div class="carousel-item">
-          <a href="publication3.html"><img src="img3.jpg" alt="Publication 3"></a>
+          <a href="publication3.html">
+            <div class="carousel-item-inner">
+              <img src="img3-bw.jpg" alt="Publication 3">
+              <img src="img3-color.jpg" class="color" alt="Publication 3">
+            </div>
+          </a>
           <div class="caption">Publication 3</div>
         </div>
-      </div>
-    </div>
-  </div>
+        <div class="carousel-item">
+          <a href="publication4.html">
+            <div class="carousel-item-inner">
+              <img src="img4-bw.jpg" alt="Publication 4">
+              <img src="img4-color.jpg" class="color" alt="Publication 4">
+            </div>
+          </a>
+ <div class="caption">Publication 4</div>
+        </div>
+        <div class="carousel-item">
+          <a href="publication5.html">
+            <div class="carousel-item-inner">
+              <img src="img5-bw.jpg" alt="Publication 5">
+              <img src="img5-color.jpg" class="color" alt="Publication 5">
+            </div>
+          </a>
+ <div class="caption">Publication 5</div>
+        </div>
+        <div class="carousel-item">
+          <a href="publication6.html">
+            <div class="carousel-item-inner">
+              <img src="img6-bw.jpg" alt="Publication 6">
+              <img src="img6-color.jpg" class="color" alt="Publication 6">
+            </div>
+          </a>
+  <div class="caption">Publication 6</div>
+ </div>
+        <div class="carousel-item">
+          <a href="publication7.html">
+            <div class="carousel-item-inner">
+              <img src="img7-bw.jpg" alt="Publication 7">
+              <img src="img7-color.jpg" class="color" alt="Publication 7">
+            </div>
+          </a>
+  <div class="caption">Publication 7</div>
 
+          
   <script>
     const track = document.getElementById('carouselTrack');
     const carousel = document.getElementById('carousel');
