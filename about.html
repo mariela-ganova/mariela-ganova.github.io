@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About | Mariela Ganova</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
       margin: 0;
@@ -14,11 +16,11 @@
       color: #ccc;
       font-family: 'Abel', sans-serif;
       min-height: 100vh;
-      position: relative;
       overflow-y: auto;
     }
+
     header {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       right: 0;
@@ -28,13 +30,30 @@
       align-items: center;
       z-index: 1000;
     }
+
+
     .logo {
-      width: 40px;
-      height: 40px;
-      background-color: #444;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
-      cursor: pointer;
+      background-color: #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: transform 0.3s ease;
     }
+
+    .logo img {
+      width: 65%;
+      height: auto;
+      display: block;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
     .icons {
       display: flex;
       gap: 1rem;
