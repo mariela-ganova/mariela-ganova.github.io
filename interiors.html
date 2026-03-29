@@ -52,45 +52,46 @@
       align-items: center;
     }
     .menu-toggle {
-  width: 25px;
-  height: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  margin-left: auto;
-}
+      width: 25px;
+      height: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+    }
 
-.menu-toggle span {
-  background-color: #ccc;
-  height: 2px;
-  width: 100%;
-}
+    .menu-toggle span {
+      background-color: #ccc;
+      height: 2px;
+      width: 100%;
+      display: block;
+    }
     .language {
       font-size: 0.8rem;
       cursor: pointer;
     }
     .menu {
-  display: none;
-  position: absolute;
-  top: 80px;
-  right: 2rem;
-  background-color: rgba(0,0,0,0.95);
-  border: 1px solid #333;
-  padding: 1rem;
-}
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 2rem;
+      background-color: rgba(0, 0, 0, 0.9);
+      border: 1px solid #333;
+      padding: 1rem;
+      z-index: 999;
+    }
 
-.menu a {
-  display: block;
-  color: #ccc;
-  text-decoration: none;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-}
+    .menu a {
+      display: block;
+      color: #ccc;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
 
-.menu a:hover {
-  color: #fff;
-}
+    .menu a:hover {
+      color: #fff;
+    }
   </style>
 </head>
 <body>
