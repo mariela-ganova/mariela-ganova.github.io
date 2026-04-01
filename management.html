@@ -7,6 +7,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Abel', sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      align-items: center;
+      z-index: 10;
+    }
     * {
       margin: 0;
       padding: 0;
@@ -20,9 +42,11 @@
       font-family: 'Abel', sans-serif;
     }
 
-    .right {
-      display: flex;
-      align-items: center;
+  .right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
     }
     .logo {
       width: 60px;
@@ -51,14 +75,11 @@
     }
 
     .menu-toggle {
-      width: 25px;
-      height: 15px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-    }
-
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
     .menu-toggle span {
       background-color: #ccc;
       height: 2px;
