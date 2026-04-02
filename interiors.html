@@ -92,47 +92,64 @@
     .menu a:hover {
       color: #fff;
     }
-.portfolio h1 {
-  text-align: center;
-  color: #ccc;       /* цветът, както при другите текстове */
-  margin-top: 100px; /* разстояние от горния край, можеш да коригираш */
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-}
+
+    .portfolio h1 {
+      text-align: center;
+      color: #ccc;
+      margin-top: 100px;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+    }
+
     .portfolio {
       max-width: 1200px;
       margin: 100px auto 50px; 
       padding: 0 2rem;
     }
+
     .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
     .projects-grid a {
       text-align: center;
       color: #ccc;
       text-decoration: none;
     }
+
     .projects-grid img {
       width: 100%;
       height: auto;
       display: block;
       cursor: pointer;
       transition: transform 0.4s ease, opacity 0.4s ease;
-}
-      .projects-grid a:hover img {
-  transform: scale(1.05);
-  opacity: 0.9;
     }
-    .projects-grid img:hover {
+
+    .projects-grid a:hover img {
       transform: scale(1.05);
+      opacity: 0.9;
     }
-    .projects-grid p {
-  margin-top: 10px;
-  font-size: 0.8rem;
-  line-height: 1.4;
-}
+
+    .project-title {
+      font-family: "Century Gothic", sans-serif;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin: 0.2rem 0;
+      color: #ccc;
+      text-align: center;
+    }
+
+    .project-location,
+    .project-type {
+      font-family: "Century Gothic", sans-serif;
+      font-size: 1rem;
+      margin: 0.1rem 0;
+      color: #ccc;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -165,23 +182,24 @@
     <h1>PORTFOLIO OF INTERIOR PROJECTS</h1>
     <div class="projects-grid">
       <a href="project1.html">
-  <img src="projects/project1-thumb.jpg" alt="Glass House">
-  <p>
-  Glass House<br>
-  Sofia, Bulgaria<br>
-  Private Residence
-</p>
-</a>
+        <img src="projects/project1-thumb.jpg" alt="Glass House">
+        <p class="project-title">GLASS HOUSE</p>
+        <p class="project-location">Sofia, Bulgaria</p>
+        <p class="project-type">Private Residence</p>
+      </a>
+
       <a href="project2.html">
         <img src="projects/project2-thumb.jpg" alt="Project 2">
-        <p>Project 2</p>
+        <p class="project-title">Project 2</p>
+        <p class="project-location">Location 2</p>
+        <p class="project-type">Type 2</p>
       </a>
       <a href="project3.html">
         <img src="projects/project3-thumb.jpg" alt="Project 3">
-        <p>Project 3</p>
+        <p class="project-title">Project 3</p>
+        <p class="project-location">Location 3</p>
+        <p class="project-type">Type 3</p>
       </a>
-  
-      
     </div>
   </main>
 
