@@ -83,10 +83,7 @@
     .menu-toggle.active span:nth-child(3) {
       transform: rotate(-45deg);
       top: 9px;
-    }
-    .language {
-    font-size: 0.8rem;
-    cursor: pointer;
+
   }
     .menu {
       display: none;
@@ -191,7 +188,7 @@
     <details>
       <summary>0.1. INTERIOR DESIGN</summary>
 <div class="sub-details">
-      0.1.1. INTERIOR DESIGN PROJECT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      50 E / m2<span class="spacer"></span>
+      0.1.1. INTERIOR DESIGN PROJECT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      60 E / m2<span class="spacer"></span>
       <div class="sub-details">
         Site measurement<br>
         Redevelopment plan<br>
@@ -212,7 +209,7 @@
         3D Vizualization - up to 2 corrections
       </div>
 
-      <div class="sub-summary">0.1.2. INTERIOR DESIGN PROJECT + DESIGN SUPERVISION &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   60 E / m2<span class="spacer"></span>
+      <div class="sub-summary">0.1.2. INTERIOR DESIGN PROJECT + DESIGN SUPERVISION &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   80 E / m2<span class="spacer"></span>
       <div class="sub-details">
         Site measurement<br>
         Redevelopment plan<br>
@@ -244,7 +241,7 @@
 
     <details>
       <summary>0.2. ARCHITECTURAL DESIGN</summary>
-      <div class="sub-summary">0.2.1 ARCHITECTURAL DESIGN UP TO 500 m2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   50 E/m2<span class="spacer"></span>
+      <div class="sub-summary">0.2.1 ARCHITECTURAL DESIGN UP TO 500 m2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   60 E/m2<span class="spacer"></span>
       <div class="sub-details">
         Development of a general plan of the building<br>
         Zoning of site<br>
@@ -273,7 +270,7 @@
 
     <details>
       <summary>0.3. INTERIOR & ARCHITECTURAL DESIGN</summary>
-      <div class="sub-summary">0.3.1 INTERIOR DESIGN PROJECT & ARCHITECTURAL DESIGN CONCEPTION &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 80 E / m2<span class="spacer"></span>
+      <div class="sub-summary">0.3.1 INTERIOR DESIGN PROJECT & ARCHITECTURAL DESIGN CONCEPTION &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100 E / m2<span class="spacer"></span>
       <div class="sub-details">
         Site measurement<br>
         Redevelopment plan<br>
@@ -304,7 +301,7 @@
         3D visualization of facade
       </div>
 
-      <div class="sub-summary">0.3.2 INTERIOR DESIGN PROJECT & ARCHITECTURAL DESIGN CONCEPTION + SUPERVISION &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  100 E / m2<span class="spacer"></span>
+      <div class="sub-summary">0.3.2 INTERIOR DESIGN PROJECT & ARCHITECTURAL DESIGN CONCEPTION + SUPERVISION &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  130 E / m2<span class="spacer"></span>
        <div class="sub-details">
         Site measurement<br>
         Redevelopment plan<br>
@@ -365,10 +362,17 @@ Testing and Commissioning
 
  </main>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+   <script>
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  const toggle = document.querySelector('.menu-toggle');
+
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  toggle.classList.toggle('active');
+}
+</script>
+</body>
+</html>
     }
   </script>
 </body>
