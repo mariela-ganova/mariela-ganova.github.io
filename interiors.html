@@ -105,10 +105,10 @@
       padding: 0 2rem;
     }
     .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-      gap: 20px;
-    }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
     .projects-grid a {
       text-align: center;
       color: #ccc;
@@ -119,16 +119,20 @@
       height: auto;
       display: block;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+}
+      .projects-grid a:hover img {
+  transform: scale(1.05);
+  opacity: 0.9;
     }
     .projects-grid img:hover {
       transform: scale(1.05);
     }
     .projects-grid p {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
+  margin-top: 10px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
   </style>
 </head>
 <body>
