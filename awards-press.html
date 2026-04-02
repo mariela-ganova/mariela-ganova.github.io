@@ -19,16 +19,16 @@
     }
 
   header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      align-items: center;
-      z-index: 1000;
-    }
+  position: fixed;
+  top: 0;
+  right: 0; 
+  width: auto; 
+  display: flex;
+  justify-content: flex-end; 
+  padding: 1rem 2rem;
+  align-items: center;
+  z-index: 1000;
+}
 .logo {
   width: 60px;
   height: 60px;
@@ -47,10 +47,12 @@
 }
 
 .icons {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
   display: flex;
   gap: 1rem;
   align-items: center;
-  margin-left: auto; 
 }
 
 .menu-toggle {
