@@ -132,23 +132,24 @@
       opacity: 0.9;
     }
 
-    .project-title {
-      font-family: "Century Gothic", sans-serif;
-      font-size: 1.3rem;
-      text-transform: uppercase;
-      font-weight: bold;
-      margin: 0.2rem 0;
-      color: #ccc;
-      text-align: center;
-    }
+    .project-title,
+.project-location,
+.project-type {
+  font-family: "Century Gothic", sans-serif;
+  color: #ccc;
+  margin: 0.2rem 0;
+  text-align: right; /* измести текста вдясно */
+}
 
-    .project-location,
-    .project-type {
-      font-family: "Century Gothic", sans-serif;
-      font-size: 1rem;
-      margin: 0.1rem 0;
-      color: #ccc;
-      text-align: center;
+.project-title {
+  text-transform: uppercase;
+  font-size: 1.3rem; /* размер на заглавието */
+  font-weight: bold;
+}
+
+.project-location,
+.project-type {
+  font-size: 1rem; /* размер на локация и тип */
     }
   </style>
 </head>
