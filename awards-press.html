@@ -21,12 +21,12 @@
   header {
   position: fixed;
   top: 0;
-  right: 0; 
-  width: auto; 
+  left: 0;
+  right: 0;
   display: flex;
-  justify-content: flex-end; 
-  padding: 1rem 2rem;
+  justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
   z-index: 1000;
 }
 .logo {
@@ -47,12 +47,10 @@
 }
 
 .icons {
-  position: absolute;
-  top: 1rem;
-  right: 2rem;
   display: flex;
   gap: 1rem;
   align-items: center;
+  position: relative; 
 }
 
 .menu-toggle {
