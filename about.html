@@ -59,20 +59,35 @@
       gap: 1rem;
       align-items: center;
     }
-    .menu-toggle {
-      width: 25px;
-      height: 15px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-    }
-    .menu-toggle span {
-      background-color: #ccc;
-      height: 2px;
-      width: 100%;
-      display: block;
-    }
+  .menu-toggle {
+  width: 25px;
+  height: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 2px;
+  background-color: #fff;
+  width: 100%;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
     .language {
       font-size: 0.8rem;
       cursor: pointer;
@@ -220,8 +235,8 @@
 
  <script>
 function toggleMenu() {
-const menu = document.getElementById('menu');
-menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  const menu = document.getElementById('menu');
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
 }
 </script>
 </body>
