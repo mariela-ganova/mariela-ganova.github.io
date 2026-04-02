@@ -24,7 +24,7 @@
   left: 0;
   right: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Лого в ляво, иконите в дясно */
   align-items: center;
   padding: 1rem 2rem;
   z-index: 1000;
@@ -50,7 +50,6 @@
   display: flex;
   gap: 1rem;
   align-items: center;
-  position: relative; 
 }
 
 .menu-toggle {
@@ -126,18 +125,19 @@
   </style>
 </head>
 <body>
- <header>
-<a href="index.html" class="logo">
-<img src="logo.png" alt="Logo">
-</a>
-<div class="icons">
-<div class="language">EN</div>
-<div class="menu-toggle" onclick="toggleMenu()">
-<span></span>
-<span></span>
-<span></span>
-</div>
-</div>
+<header>
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="Logo">
+  </a>
+  <div class="icons">
+    <div class="language">EN</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
   <div class="menu" id="menu">
     <a href="index.html">0.1 HOMEPAGE</a>
     <a href="about.html">0.2 ABOUT</a>
