@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interiors – Mariela Ganova Design</title>
+  <title>SENTRO – Mariela Ganova Design</title>
+
   <style>
     body {
       margin: 0;
@@ -14,6 +15,7 @@
       min-height: 100vh;
       overflow-y: auto;
     }
+
     header {
       position: fixed;
       top: 0;
@@ -25,10 +27,7 @@
       justify-content: space-between;
       align-items: center;
     }
-    .right {
-      display: flex;
-      align-items: center;
-    }
+
     .logo {
       width: 60px;
       height: 60px;
@@ -39,15 +38,12 @@
       justify-content: center;
       overflow: hidden;
     }
+
     .logo img {
       width: 65%;
       height: auto;
     }
-    .icons {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
+
     .menu-toggle {
       width: 25px;
       height: 15px;
@@ -56,6 +52,7 @@
       justify-content: space-between;
       cursor: pointer;
     }
+
     .menu-toggle span {
       height: 2px;
       background-color: #fff;
@@ -63,15 +60,19 @@
       display: block;
       transition: all 0.3s ease;
     }
+
     .menu-toggle.active span:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px);
     }
+
     .menu-toggle.active span:nth-child(2) {
       opacity: 0;
     }
+
     .menu-toggle.active span:nth-child(3) {
       transform: rotate(-45deg) translate(6px, -6px);
     }
+
     .menu {
       display: none;
       position: absolute;
@@ -82,6 +83,7 @@
       padding: 1rem;
       z-index: 999;
     }
+
     .menu a {
       display: block;
       color: #ccc;
@@ -89,91 +91,86 @@
       margin-bottom: 0.5rem;
       font-size: 0.9rem;
     }
+
     .menu a:hover {
       color: #fff;
     }
-.portfolio h1 {
-  text-align: center;
-  color: #ccc;       /* цветът, както при другите текстове */
-  margin-top: 100px; /* разстояние от горния край, можеш да коригираш */
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-}
-    .portfolio {
-      max-width: 1200px;
-      margin: 100px auto 50px; 
-      padding: 0 2rem;
-    }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-      gap: 20px;
-    }
-    .projects-grid a {
+
+    .project-title {
+      font-family: "Century Gothic", sans-serif;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: 100px;
       text-align: center;
-      color: #ccc;
-      text-decoration: none;
     }
-    .projects-grid img {
-      width: 100%;
-      height: auto;
+
+    .project-location,
+    .project-type {
+      font-family: "Century Gothic", sans-serif;
+      font-size: 1rem;
+      text-align: center;
+      margin: 5px 0;
+    }
+
+    .project-images img {
+      width: 90%;
+      max-width: 800px;
       display: block;
-      cursor: pointer;
+      margin: 20px auto;
       transition: transform 0.3s ease;
     }
-    .projects-grid img:hover {
+
+    .project-images img:hover {
       transform: scale(1.05);
-    }
-    .projects-grid p {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: #ccc;
     }
   </style>
 </head>
+
 <body>
+
   <header>
     <a href="index.html" class="logo">
       <img src="logo.png" alt="Logo">
     </a>
-    <div class="right">
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="menu" id="menu">
+      <a href="index.html">0.1 HOMEPAGE</a>
+      <a href="about.html">0.2 ABOUT</a>
+      <a href="interiors.html">0.3 INTERIORS</a>
+      <a href="exteriors.html">0.4 EXTERIORS</a>
+      <a href="mara-studio.html">0.5 MARA studio</a>
+      <a href="price.html">0.6 PRICE</a>
+      <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
+      <a href="awards-press.html">0.8 AWARDS & PRESS</a>
+      <a href="contact.html">0.9 CONTACT</a>
     </div>
   </header>
 
-  <div class="menu" id="menu">
-    <a href="index.html">0.1 HOMEPAGE</a>
-    <a href="about.html">0.2 ABOUT</a>
-    <a href="interiors.html">0.3 INTERIORS</a>
-    <a href="exteriors.html">0.4 EXTERIORS</a>
-    <a href="mara-studio.html">0.5 MARA studio</a>
-    <a href="price.html">0.6 PRICE</a>
-    <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
-    <a href="awards-press.html">0.8 AWARDS & PRESS</a>
-    <a href="contact.html">0.9 CONTACT</a>
-  </div>
+  <main>
+    <div class="project-title">SENTRO</div>
+    <div class="project-location">Sofia, Bulgaria</div>
+    <div class="project-type">Hotel</div>
 
-  <main class="portfolio">
-    <h1>PORTFOLIO OF INTERIOR PROJECTS</h1>
-    <div class="projects-grid">
-      <a href="project1.html">
-        <img src="projects/project1-thumb.jpg" alt="Project 1">
-        <p>Project 1</p>
-      </a>
-      <a href="project2.html">
-        <img src="projects/project2-thumb.jpg" alt="Project 2">
-        <p>Project 2</p>
-      </a>
-      <a href="project3.html">
-        <img src="projects/project3-thumb.jpg" alt="Project 3">
-        <p>Project 3</p>
-      </a>
+    <div class="project-images">
   
-      
+      <img src="projects/hotel-sentro-main.jpg" alt="">
+
+   
+      <img src="projects/hotelsentro1.jpg" alt="">
+      <img src="projects/hotelsentro2.jpg" alt="">
+      <img src="projects/hotelsentro3.jpg" alt="">
+      <img src="projects/hotelsentro4.jpg" alt="">
+      <img src="projects/hotelsentro5.jpg" alt="">
+      <img src="projects/hotelsentro6.jpg" alt="">
+      <img src="projects/hotelsentro7.jpg" alt="">
+      <img src="projects/hotelsentro8.jpg" alt="">
     </div>
   </main>
 
@@ -181,10 +178,11 @@
     function toggleMenu() {
       const menu = document.getElementById('menu');
       const toggle = document.querySelector('.menu-toggle');
+
       menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
       toggle.classList.toggle('active');
     }
   </script>
+
 </body>
 </html>
-
