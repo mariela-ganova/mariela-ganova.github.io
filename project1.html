@@ -1,1 +1,187 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project 1 – Mariela Ganova Design</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #ccc;
+      font-family: 'Abel', sans-serif;
+      overflow-y: auto;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem 2rem;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #000;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 65%;
+      height: auto;
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+    }
+
+    .menu-toggle {
+      width: 25px;
+      height: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 2px;
+      background-color: #fff;
+      width: 100%;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 2rem;
+      background-color: rgba(0, 0, 0, 0.9);
+      border: 1px solid #333;
+      padding: 1rem;
+      z-index: 999;
+    }
+
+    .menu a {
+      display: block;
+      color: #ccc;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .menu a:hover {
+      color: #fff;
+    }
+
+    .project-container {
+      max-width: 1000px;
+      margin: 120px auto 50px;
+      padding: 0 2rem;
+    }
+
+    .project-title {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      letter-spacing: 2px;
+    }
+
+    .project-image {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="Logo">
+  </a>
+
+  <div class="right">
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu">
+  <a href="index.html">0.1 HOMEPAGE</a>
+  <a href="about.html">0.2 ABOUT</a>
+  <a href="interiors.html">0.3 INTERIORS</a>
+  <a href="exteriors.html">0.4 EXTERIORS</a>
+  <a href="mara-studio.html">0.5 MARA studio</a>
+  <a href="price.html">0.6 PRICE</a>
+  <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
+  <a href="awards-press.html">0.8 AWARDS & PRESS</a>
+  <a href="contact.html">0.9 CONTACT</a>
+</div>
+
+<main class="project-container">
+  <div class="project-title">PROJECT 1 NAME</div>
+
+  <div class="project-image">
+    <img src="projects/project1-1.jpg" alt="">
+  </div>
+
+  <div class="project-image">
+    <img src="projects/project1-2.jpg" alt="">
+  </div>
+
+  <div class="project-image">
+    <img src="projects/project1-3.jpg" alt="">
+  </div>
+
+</main>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  const toggle = document.querySelector('.menu-toggle');
+
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  toggle.classList.toggle('active');
+}
+</script>
+
+</body>
+</html>
