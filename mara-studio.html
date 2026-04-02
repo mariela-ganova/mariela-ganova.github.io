@@ -59,15 +59,25 @@
       cursor: pointer;
     }
     .menu-toggle span {
-      background-color: #ccc;
-      height: 2px;
-      width: 100%;
-      display: block;
-    }
-    .language {
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
+  height: 2px;
+  background-color: #fff;
+  width: 100%;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
     .menu {
   display: none;
   position: absolute;
@@ -121,7 +131,10 @@
   <script>
 function toggleMenu() {
   const menu = document.getElementById('menu');
+  const toggle = document.querySelector('.menu-toggle');
+
   menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  toggle.classList.toggle('active');
 }
 </script>
 </body>
