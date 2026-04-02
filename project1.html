@@ -14,6 +14,7 @@
       min-height: 100vh;
       overflow-y: auto;
     }
+
     header {
       position: fixed;
       top: 0;
@@ -25,6 +26,7 @@
       justify-content: space-between;
       align-items: center;
     }
+
     .logo {
       width: 60px;
       height: 60px;
@@ -35,10 +37,12 @@
       justify-content: center;
       overflow: hidden;
     }
+
     .logo img {
       width: 65%;
       height: auto;
     }
+
     .menu-toggle {
       width: 25px;
       height: 15px;
@@ -47,6 +51,7 @@
       justify-content: space-between;
       cursor: pointer;
     }
+
     .menu-toggle span {
       height: 2px;
       background-color: #fff;
@@ -54,6 +59,7 @@
       display: block;
       transition: all 0.3s ease;
     }
+
     .menu-toggle.active span:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px);
     }
@@ -63,6 +69,7 @@
     .menu-toggle.active span:nth-child(3) {
       transform: rotate(-45deg) translate(6px, -6px);
     }
+
     .menu {
       display: none;
       position: absolute;
@@ -73,6 +80,7 @@
       padding: 1rem;
       z-index: 999;
     }
+
     .menu a {
       display: block;
       color: #ccc;
@@ -80,88 +88,82 @@
       margin-bottom: 0.5rem;
       font-size: 0.9rem;
     }
+
     .menu a:hover {
       color: #fff;
     }
 
-    .project-header {
-      margin-top: 120px;
+    .project-title {
+      font-family: "Century Gothic", sans-serif;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin: 0.2rem 0;
+      color: #ccc;
       text-align: center;
     }
-    .project-header h1 {
-      font-family: "Century Gothic", sans-serif;
-      font-size: 1.8rem;
-      text-transform: uppercase;
-      margin-bottom: 0.3rem;
-    }
-    .project-header p {
+
+    .project-location,
+    .project-type {
       font-family: "Century Gothic", sans-serif;
       font-size: 1rem;
-      margin: 0.2rem 0;
+      margin: 0.1rem 0;
+      color: #ccc;
+      text-align: center;
     }
 
     .project-images {
-      max-width: 1000px;
-      margin: 2rem auto;
+      max-width: 1200px;
+      margin: 150px auto 50px;
+      padding: 0 2rem;
       display: flex;
       flex-direction: column;
       gap: 20px;
-      padding: 0 1rem;
     }
+
     .project-images img {
       width: 100%;
       height: auto;
       display: block;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .project-images img:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
   <header>
-    <a href="index.html" class="logo"><img src="logo.png" alt="Logo"></a>
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Logo">
+    </a>
     <div class="menu-toggle" onclick="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
     </div>
+    <div class="menu" id="menu">
+      <a href="index.html">0.1 HOMEPAGE</a>
+      <a href="about.html">0.2 ABOUT</a>
+      <a href="interiors.html">0.3 INTERIORS</a>
+      <a href="exteriors.html">0.4 EXTERIORS</a>
+      <a href="mara-studio.html">0.5 MARA studio</a>
+      <a href="price.html">0.6 PRICE</a>
+      <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
+      <a href="awards-press.html">0.8 AWARDS & PRESS</a>
+      <a href="contact.html">0.9 CONTACT</a>
+    </div>
   </header>
 
-  <div class="menu" id="menu">
-    <a href="index.html">0.1 HOMEPAGE</a>
-    <a href="about.html">0.2 ABOUT</a>
-    <a href="interiors.html">0.3 INTERIORS</a>
-    <a href="exteriors.html">0.4 EXTERIORS</a>
-    <a href="mara-studio.html">0.5 MARA studio</a>
-    <a href="price.html">0.6 PRICE</a>
-    <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
-    <a href="awards-press.html">0.8 AWARDS & PRESS</a>
-    <a href="contact.html">0.9 CONTACT</a>
-  </div>
+  <main>
+    <div class="project-title">GLASS HOUSE</div>
+    <div class="project-location">Sofia, Bulgaria</div>
+    <div class="project-type">Private Residence</div>
 
-  <div class="project-header">
-    <h1>GLASS HOUSE</h1>
-    <p>Sofia, Bulgaria</p>
-    <p>Private Residence</p>
-  </div>
-
-  <div class="project-images">
-<img src="projects/glass-house-1.jpg" alt="Glass House 1">
-<img src="projects/glass-house-2.jpg" alt="Glass House 2">
-<img src="projects/glass-house-3.jpg" alt="Glass House 3">
-<img src="projects/glass-house-4.jpg" alt="Glass House 4">
-<img src="projects/glass-house-5.jpg" alt="Glass House 5">
-<img src="projects/glass-house-6.jpg" alt="Glass House 6">
-<img src="projects/glass-house-7.jpg" alt="Glass House 7">
-<img src="projects/glass-house-8.jpg" alt="Glass House 8">
-<img src="projects/glass-house-main.jpg" alt="Glass House Main">
-  </div>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      const toggle = document.querySelector('.menu-toggle');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-      toggle.classList.toggle('active');
-    }
-  </script>
-</body>
-</html>
+    <div class="project-images">
+      <img src="projects/glass-house-1.jpg" alt="Glass House 1">
+      <img src="projects/glass-house-2.jpg" alt="Glass House 2">
+      <img src="projects/glass-house-3.jpg" alt="Glass House 3">
+      <img src="projects/
