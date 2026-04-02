@@ -112,22 +112,19 @@
       text-align: center;
     }
 
-    .project-images {
-      max-width: 1200px;
-      margin: 150px auto 50px;
-      padding: 0 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+    .project-images img.small-img {
+  width: 90%;       
+  max-width: 800px;
+  margin: 0 auto;
+  display: block;
+}
 
-    .project-images img {
-      width: 100%;
-      height: auto;
-      display: block;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
+.main-image img {
+  width: 90%; 
+  max-width: 800px;
+  display: block;
+  margin: 20px auto 5px;
+}
 
     .project-images img:hover {
       transform: scale(1.05);
@@ -158,22 +155,25 @@
   </header>
 
   <main>
-    <div class="project-title">GLASS HOUSE</div>
-    <div class="project-location">Sofia, Bulgaria</div>
-    <div class="project-type">Private Residence</div>
+  <div class="project-title">GLASS HOUSE</div>
+  <div class="project-location">Sofia, Bulgaria</div>
+  <div class="project-type">Private Residence</div>
 
-    <div class="project-images">
-      <img src="projects/glass-house-1.jpg" alt="Glass House 1">
-      <img src="projects/glass-house-2.jpg" alt="Glass House 2">
-      <img src="projects/glass-house-3.jpg" alt="Glass House 3">
-      <img src="projects/glass-house-4.jpg" alt="Glass House 4">
-      <img src="projects/glass-house-5.jpg" alt="Glass House 5">
-      <img src="projects/glass-house-6.jpg" alt="Glass House 6">
-      <img src="projects/glass-house-7.jpg" alt="Glass House 7">
-      <img src="projects/glass-house-8.jpg" alt="Glass House 8">
-      <img src="projects/glass-house-main.jpg" alt="Glass House Main">
+  <div class="project-images">
+  <img src="projects/glass-house-1.jpg" alt="Glass House 1" class="small-img">
+  <img src="projects/glass-house-2.jpg" alt="Glass House 2" class="small-img">
+  <img src="projects/glass-house-3.jpg" alt="Glass House 3" class="small-img">
+  <img src="projects/glass-house-4.jpg" alt="Glass House 4" class="small-img">
+  <img src="projects/glass-house-5.jpg" alt="Glass House 5" class="small-img">
+  <img src="projects/glass-house-6.jpg" alt="Glass House 6" class="small-img">
+  <img src="projects/glass-house-7.jpg" alt="Glass House 7" class="small-img">
+  <img src="projects/glass-house-8.jpg" alt="Glass House 8" class="small-img">
+
+    <div class="main-image">
+      <img src="projects/glass-house-main.jpg" alt="Glass House Main" class="small-img">
     </div>
-  </main>
+  </div>
+</main>
 
   <script>
     function toggleMenu() {
