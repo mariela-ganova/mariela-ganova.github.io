@@ -126,13 +126,19 @@
   margin: 0 auto 120px;
   padding: 0 40px;
 }
+    .product-name {
+  pointer-events: none;
+}
+  
     .product {
   position: relative;
   overflow: hidden;
   cursor: pointer;
 }
 
-
+.products-grid a.product {
+  position: relative; /* важно е тук да има relative */
+}
     .product img {
   width: 100%;
   display: block;
