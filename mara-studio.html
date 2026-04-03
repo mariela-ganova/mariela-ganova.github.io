@@ -1,182 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MARA Studio – Mariela Ganova</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MARA Studio – Mariela Ganova</title>
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #000;
-      color: #ccc;
-      font-family: 'Abel', sans-serif;
-      min-height: 100vh;
-      overflow-y: auto;
-    }
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #ccc;
+  font-family: 'Abel', sans-serif;
+  min-height: 100vh;
+  overflow-y: auto;
+}
 
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 1rem 2rem;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .logo {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: #444;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
-    .logo img {
-      width: 65%;
-      height: auto;
-    }
+.logo img {
+  width: 65%;
+  height: auto;
+}
 
-    .menu-toggle {
-      width: 25px;
-      height: 15px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-    }
+.menu-toggle {
+  width: 25px;
+  height: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
 
-    .menu-toggle span {
-      height: 2px;
-      background-color: #fff;
-      width: 100%;
-      display: block;
-      transition: all 0.3s ease;
-    }
+.menu-toggle span {
+  height: 2px;
+  background-color: #fff;
+  width: 100%;
+  display: block;
+  transition: all 0.3s ease;
+}
 
-    .menu-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
 
-    .menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
 
-    .menu-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
-    }
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
 
-    .menu {
-      display: none;
-      position: absolute;
-      top: 60px;
-      right: 2rem;
-      background-color: rgba(0,0,0,0.9);
-      border: 1px solid #333;
-      padding: 1rem;
-      z-index: 999;
-    }
+.menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 2rem;
+  background-color: rgba(0,0,0,0.9);
+  border: 1px solid #333;
+  padding: 1rem;
+  z-index: 999;
+}
 
-    .menu a {
-      display: block;
-      color: #ccc;
-      text-decoration: none;
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-    }
+.menu a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
 
-    .menu a:hover {
-      color: #fff;
-    }
+.menu a:hover {
+  color: #fff;
+}
 
-    /* INTRO */
-    .studio-intro {
-      max-width: 800px;
-      margin: 120px auto 80px;
-      text-align: center;
-      line-height: 1.8;
-      padding: 0 20px;
-    }
+/* INTRO */
 
-    .studio-intro h1 {
-      font-size: 2.4rem;
-      letter-spacing: 6px;
-      margin-bottom: 40px;
-    }
+.studio-intro {
+  max-width: 800px;
+  margin: 120px auto 80px;
+  text-align: center;
+  line-height: 1.8;
+  padding: 0 20px;
+}
 
-    .studio-intro p {
-      font-size: 1.1rem;
-      color: #bbb;
-      line-height: 1.9;
-    }
+.studio-intro h1 {
+  font-size: 2.4rem;
+  letter-spacing: 6px;
+  margin-bottom: 40px;
+}
 
-    /* PRODUCTS GRID */
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 60px;
-      max-width: 1200px;
-      margin: 0 auto 120px;
-      padding: 0 40px;
-    }
+.studio-intro p {
+  font-size: 1.1rem;
+  color: #bbb;
+  line-height: 1.9;
+}
 
-    .products-grid a.product {
-      position: relative; /* важно за overlay и името */
-      overflow: hidden;
-      cursor: pointer;
-      display: block;
-    }
+/* PRODUCTS GRID */
 
-    .product img {
-      width: 100%;
-      display: block;
-      transition: transform 0.6s ease, opacity 0.6s ease;
-    }
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto 120px;
+  padding: 0 40px;
+}
 
-    .product::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.2);
-      transition: background 0.4s ease;
-      z-index: 1;
-    }
+.products-grid a.product {
+  position: relative; /* важно */
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+}
 
-    .product:hover img {
-      transform: scale(1.08);
-    }
+.product img {
+  width: 100%;
+  display: block;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
 
-    .product:hover::after {
-      background: rgba(0,0,0,0.4);
-    }
+/* HOVER OVERLAY — invisible by default */
+.product::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
 
-    /* PRODUCT NAME */
-    .product-name {
-      position: absolute;
-      bottom: 20px;
-      left: 25px;
-      font-size: 1rem;
-      color: #fff;
-      letter-spacing: 2px;
-      text-transform: lowercase;
-      opacity: 0.9;
-      z-index: 2;
-      pointer-events: none;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
+/* show overlay only on hover */
+.product:hover::after {
+  opacity: 1;
+}
 
-    .product:hover .product-name {
-      transform: translateY(-5px);
-    }
+/* PRODUCT NAME — hidden by default */
+.product-name {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(5px);
+}
 
-  </style>
+/* show name on hover */
+.product:hover .product-name {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* image zoom */
+.product:hover img {
+  transform: scale(1.08);
+}
+</style>
 </head>
 
 <body>
