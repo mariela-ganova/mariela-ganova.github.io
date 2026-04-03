@@ -132,11 +132,6 @@
   cursor: pointer;
 }
 
-    .product img {
-      width: 100%;
-      display: block;
-      transition: transform 0.4s ease, opacity 0.4s ease;
-    }
 
     .product img {
   width: 100%;
@@ -172,6 +167,12 @@
   text-transform: lowercase;
   opacity: 0.9;
   z-index: 2; 
+}
+    .product-name {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+    .product:hover .product-name {
+  transform: translateY(-5px);
 }
 
   </style>
@@ -228,11 +229,11 @@
     <div class="product-name">object two</div>
   </a>
 
-  <a href="product2.html" class="product">
+  <a href="product3.html" class="product">
     <img src="mara-studio/product3.jpg" alt="">
     <div class="product-name">object three</div>
   </a>
-  <a href="product2.html" class="product">
+  <a href="product4.html" class="product">
     <img src="mara-studio/product4.jpg" alt="">
     <div class="product-name">object four</div>
   </a>
