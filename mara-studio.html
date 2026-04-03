@@ -119,18 +119,18 @@
 
 
     .products-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-      max-width: 1100px;
-      margin: 0 auto 80px;
-      padding: 0 20px;
-    }
-
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto 120px;
+  padding: 0 40px;
+}
     .product {
-      position: relative;
-      cursor: pointer;
-    }
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
 
     .product img {
       width: 100%;
@@ -138,20 +138,39 @@
       transition: transform 0.4s ease, opacity 0.4s ease;
     }
 
-    .product:hover img {
-      transform: scale(1.05);
-      opacity: 0.9;
-    }
+    .product img {
+  width: 100%;
+  display: block;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+    /* DARK OVERLAY */
+.product::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+  transition: opacity 0.4s ease;
+}
+    /* HOVER EFFECT */
+.product:hover img {
+  transform: scale(1.08);
+}
 
+.product:hover::after {
+  background: rgba(0,0,0,0.4);
+}
 
-    .product-name {
-      position: absolute;
-      bottom: 15px;
-      left: 20px;
-      font-size: 1.4rem;
-      color: #fff;
-      letter-spacing: 1px;
-    }
+/* PRODUCT NAME */
+.product-name {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  opacity: 0.9;
+}
 
   </style>
 </head>
