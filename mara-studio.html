@@ -2,54 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Products – Mariela Ganova Design</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MARA Studio – Mariela Ganova</title>
+
   <style>
-  body {
+    body {
       margin: 0;
       padding: 0;
       background-color: #000;
       color: #ccc;
       font-family: 'Abel', sans-serif;
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
+      min-height: 100vh;
+      overflow-y: auto;
     }
-    header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 1rem 2rem;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-    .right {
-  display: flex;
-  align-items: center;
-}
-    .logo {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #444;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
 
-.logo img {
-  width: 65%;
-  height: auto;
-}
-    .icons {
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem 2rem;
+      z-index: 1000;
       display: flex;
-      gap: 1rem;
+      justify-content: space-between;
       align-items: center;
     }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 65%;
+      height: auto;
+    }
+
     .menu-toggle {
       width: 25px;
       height: 15px;
@@ -58,36 +52,37 @@
       justify-content: space-between;
       cursor: pointer;
     }
+
     .menu-toggle span {
-  height: 2px;
-  background-color: #fff;
-  width: 100%;
-  display: block;
-  transition: all 0.3s ease;
-}
+      height: 2px;
+      background-color: #fff;
+      width: 100%;
+      display: block;
+      transition: all 0.3s ease;
+    }
 
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
 
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
 
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
 
     .menu {
-  display: none;
-  position: absolute;
-  top: 60px;
-  right: 2rem;
-  background-color: rgba(0, 0, 0, 0.9);
-  border: 1px solid #333;
-  padding: 1rem;
-  z-index: 999;
-}
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 2rem;
+      background-color: rgba(0,0,0,0.9);
+      border: 1px solid #333;
+      padding: 1rem;
+      z-index: 999;
+    }
 
     .menu a {
       display: block;
@@ -100,21 +95,82 @@
     .menu a:hover {
       color: #fff;
     }
+
+    /* INTRO TEXT */
+
+    .studio-intro {
+      max-width: 800px;
+      margin: 120px auto 80px;
+      text-align: center;
+      line-height: 1.8;
+      padding: 0 20px;
+    }
+
+    .studio-intro h1 {
+      font-size: 1.6rem;
+      letter-spacing: 3px;
+      margin-bottom: 30px;
+    }
+
+    .studio-intro p {
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+
+    /* PRODUCTS GRID */
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto 80px;
+      padding: 0 20px;
+    }
+
+    .product {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .product img {
+      width: 100%;
+      display: block;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+
+    .product:hover img {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    /* NAME ON IMAGE */
+
+    .product-name {
+      position: absolute;
+      bottom: 15px;
+      left: 20px;
+      font-size: 0.9rem;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
   </style>
 </head>
+
 <body>
-  <header>
+
+<header>
   <a href="index.html" class="logo">
     <img src="logo.png" alt="Logo">
   </a>
-<div class="right">
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
-  </header>
+
   <div class="menu" id="menu">
     <a href="index.html">0.1 HOMEPAGE</a>
     <a href="about.html">0.2 ABOUT</a>
@@ -122,13 +178,40 @@
     <a href="exteriors.html">0.4 EXTERIORS</a>
     <a href="mara-studio.html">0.5 MARA studio</a>
     <a href="price.html">0.6 PRICE</a>
-   <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
+    <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
     <a href="awards-press.html">0.8 AWARDS & PRESS</a>
     <a href="contact.html">0.9 CONTACT</a>
   </div>
-  </header>
+</header>
 
-  <script>
+<!-- INTRO -->
+
+<section class="studio-intro">
+  <h1>MARA STUDIO</h1>
+  <p>
+    Founded in 2017, MARA studio navigates the tension between precision and intuition — a studio where objects emerge as quiet statements rather than declarations. The owner Mariela Ganova works across wood, metal, and leather, each piece exists as a singular presence, shaped by contrast: strict geometry against soft, almost organic deformation.
+    <br><br>
+    Furniture, lighting, and objects exist in the in-between — where defined form dissolves into fluid transition, and clarity gives way to ambiguity. The design is a tangible manifestation of a captured feeling.
+  </p>
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="products-grid">
+
+  <a href="product1.html" class="product">
+    <img src="mara-studio/product1.jpg" alt="">
+    <div class="product-name">object one</div>
+  </a>
+
+  <a href="product2.html" class="product">
+    <img src="mara-studio/product2.jpg" alt="">
+    <div class="product-name">object two</div>
+  </a>
+
+</section>
+
+<script>
 function toggleMenu() {
   const menu = document.getElementById('menu');
   const toggle = document.querySelector('.menu-toggle');
@@ -137,5 +220,6 @@ function toggleMenu() {
   toggle.classList.toggle('active');
 }
 </script>
+
 </body>
 </html>
