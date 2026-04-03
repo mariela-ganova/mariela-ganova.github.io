@@ -143,7 +143,7 @@
   display: block;
   transition: transform 0.6s ease, opacity 0.6s ease;
 }
-    /* DARK OVERLAY */
+   
 .product::after {
   content: "";
   position: absolute;
@@ -151,7 +151,7 @@
   background: rgba(0,0,0,0.2);
   transition: opacity 0.4s ease;
 }
-    /* HOVER EFFECT */
+    
 .product:hover img {
   transform: scale(1.08);
 }
@@ -160,7 +160,7 @@
   background: rgba(0,0,0,0.4);
 }
 
-/* PRODUCT NAME */
+
 .product-name {
   position: absolute;
   bottom: 20px;
@@ -170,6 +170,7 @@
   letter-spacing: 2px;
   text-transform: lowercase;
   opacity: 0.9;
+  z-index: 2; 
 }
 
   </style>
