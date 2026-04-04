@@ -96,7 +96,7 @@ header {
   color: #fff;
 }
 
-/* INTRO */
+
 
 .studio-intro {
   max-width: 800px;
@@ -118,7 +118,7 @@ header {
   line-height: 1.9;
 }
 
-/* PRODUCTS GRID */
+
 
 .products-grid {
   display: grid;
@@ -142,7 +142,7 @@ header {
   transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
-/* HOVER OVERLAY — invisible by default */
+
 .product::after {
   content: "";
   position: absolute;
@@ -153,20 +153,21 @@ header {
   z-index: 1;
 }
 
-/* show overlay only on hover */
 .product:hover::after {
   opacity: 1;
 }
 
-/* PRODUCT NAME — hidden by default */
+
 .product-name {
   position: absolute;
-  bottom: 20px;
-  left: 25px;
-  font-size: 1rem;
+  bottom: 25px;
+  left: 30px;
+  font-size: 1.3rem;
   color: #fff;
-  letter-spacing: 2px;
-  text-transform: lowercase;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-family: "Century Gothic", sans-serif;
+  font-weight: 300;
   opacity: 0;
   z-index: 2;
   pointer-events: none;
@@ -174,13 +175,12 @@ header {
   transform: translateY(5px);
 }
 
-/* show name on hover */
 .product:hover .product-name {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* image zoom */
+
 .product:hover img {
   transform: scale(1.08);
 }
@@ -213,7 +213,7 @@ header {
   </div>
 </header>
 
-<!-- INTRO -->
+
 <section class="studio-intro">
   <h1>MARA STUDIO</h1>
   <p>
