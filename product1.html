@@ -10,34 +10,61 @@ body {
   margin: 0;
   background: #000;
   color: #ccc;
-  font-family: 'Abel', sans-serif;
+  font-family: "Century Gothic", sans-serif;
 }
 
-/* TITLE */
-.product-title {
-  text-align: center;
-  margin-top: 120px;
-  font-size: 1.8rem;
-  letter-spacing: 4px;
-}
 
-/* MAIN IMAGE */
-.main-image img {
-  width: 90%;
-  max-width: 1000px;
-  display: block;
-  margin: 40px auto;
-}
-
-/* GALLERY */
-.gallery {
+.product-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  padding: 0 40px 100px;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1400px;
+  margin: 120px auto;
+  padding: 0 40px;
 }
 
-.gallery img {
+
+.product-images {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.product-images img {
+  width: 100%;
+  max-width: 600px;
+}
+
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+
+.product-title {
+  font-size: 1.8rem;
+  letter-spacing: 6px;
+}
+
+
+.product-text {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: #bbb;
+  white-space: pre-line;
+}
+
+
+.product-specs {
+  font-size: 0.9rem;
+  line-height: 2;
+}
+
+.line {
+  border-bottom: 1px solid #333;
+  margin: 15px 0;
   width: 100%;
 }
 </style>
@@ -45,17 +72,134 @@ body {
 
 <body>
 
-<div class="product-title">ON'EA</div>
+<div class="product-wrapper">
+  <div class="product-images">
+    <img src="mara-studio/sunlounger1.jpg">
+    <img src="mara-studio/sunlounger2.jpg">
+    <img src="mara-studio/sunlounger3.jpg">
+    <img src="mara-studio/sunlounger4.jpg">
+  </div>
 
-</div>
+  <div class="product-info">
 
-<div class="gallery">
-  <img src="mara-studio/sunlounger1.jpg">
-  <img src="mara-studio/sunlounger2.jpg">
-  <img src="mara-studio/sunlounger3.jpg">
-  <img src="mara-studio/sunlounger4.jpg">
+    <div class="product-title">ON'EA</div>
+
+    <div class="product-text">
+there is no beginning
+there is no function
+there is no promise
+
+only
+permeability
+---
+the metal has forgotten
+that it is meant to be solid
+
+it has stretched
+into lines
+into absences
+into pauses within itself
+---
+this is not a surface
+
+this is
+a passage
+
+---
+
+you sit -
+and something is missing
+
+not support
+but resistance
+
+On’ea does not hold you
+it lets you go
+---
+air does not surround the form
+
+it cuts through it
+divides it
+repeats it in motion
+
+you are not on the object
+
+you are inside
+a flow
+without shape
+---
+On’ea does not mean
+
+or it means
+exactly what cannot be held
+
+a sound
+before it becomes a word
+
+space
+before it becomes a place
+---
+there is no center
+
+no mass
+
+only
+a network of possibilities
+that occur
+when the body stops weighing
+---
+this is not design
+
+this is a refusal
+of density
+of boundaries
+of possession
+---
+On’ea is the moment
+you realize
+that form does not exist
+except as
+passage
+---
+if you stay long enough
+
+you will disappear
+without moving
+!
+    </div>
+
+    <div class="product-specs">
+
+      <div>INFORMATION</div>
+
+      <div class="line"></div>
+      <div>6200 €</div>
+      <div class="line"></div>
+
+      <div>Category: Sun lounger</div>
+      <div>Target: indoor/outdoor</div>
+
+      <div class="line"></div>
+
+      <div>Dimension: L.1900 x d. 770 x h. 840 mm</div>
+
+      <div class="line"></div>
+
+      <div>Color: Yellow / Black / Custom RAL</div>
+
+      <div class="line"></div>
+
+      <div>Material: Metal</div>
+
+      <div class="line"></div>
+
+      <div>Production: Made to order, 50 working days</div>
+
+    </div>
+
+  </div>
+
 </div>
 
 </body>
 </html>
-
