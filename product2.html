@@ -96,9 +96,9 @@ body {
 .product-wrapper {
   display: grid;
   grid-template-columns: 1.3fr 0.7fr; 
-  gap: 100px; 
+  gap: 100px;
   max-width: 1500px;
-  margin: 120px auto;
+  margin: 120px auto 60px; 
   padding: 0 60px;
 }
 
@@ -111,23 +111,22 @@ body {
 
 .product-images img {
   width: 100%;
+  display: block;
   max-width: 600px;
 }
-
 
 .product-info {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding-left: 40px; 
+  padding-left: 40px;
 }
-
 
 .product-title {
   font-size: 1.8rem;
   letter-spacing: 6px;
+  color: #ccc;
 }
-
 
 .product-text {
   font-size: 0.95rem;
@@ -152,8 +151,7 @@ body {
 
 <body>
 
-  <header>
-
+<header>
   <a href="index.html" class="logo">
     <img src="logo.png" alt="Logo">
   </a>
@@ -165,7 +163,8 @@ body {
   </div>
 
 
-  <div class="menu" id="menu">
+
+   <div class="menu" id="menu">
     <a href="index.html">0.1 HOMEPAGE</a>
     <a href="about.html">0.2 ABOUT</a>
     <a href="interiors.html">0.3 INTERIORS</a>
@@ -178,70 +177,52 @@ body {
   </div>
 </header>
 
-
-<div class="product-title">ANEMONA</div>
-
-</div>
-
-<div class="gallery">
-  <img src="mara-studio/anemona1.jpg">
-  <img src="mara-studio/anemona2.jpg">
-</div>
-
-   <div class="product-text">
-
+ <main>
+  <div class="product-wrapper">
+    <!-- Лявата колона – снимки -->
+    <div class="product-images">
+      <img src="mara-studio/anemona1.jpg" alt="">
+      <img src="mara-studio/anemona2.jpg" alt="">
     </div>
 
-    <div class="product-specs">
+    <!-- Дясната колона – текст -->
+    <div class="product-info">
+      <div class="product-title">ANEMONA</div>
 
-      <div>INFORMATION</div>
+      <div class="product-text">
+        <!-- Може да сложиш описание тук -->
+      </div>
 
-      <div class="line"></div>
-      
-      <div>800 €</div>
-      
-      <div class="line"></div>
-
-      <div>Category: Coffee table</div>
-      
-      <div class="line"></div>
-      
-      <div>Target: indoor/outdoor</div>
-
-      <div class="line"></div>
-
-      <div>Dimension small: L.355 x d. 380 x h. 360/410 mm</div>
-      <div>Dimension middle: L.440 x d. 472 x h. 420/503 mm</div>
-      <div>Dimension high: L.355 x d. 386 x h. 525/575 mm</div>
-
-      <div class="line"></div>
-
-      <div>Color: Yellow / Black / Custom RAL</div>
-
-      <div class="line"></div>
-
-      <div>Material: Metal</div>
-
-      <div class="line"></div>
-
-      <div>Production: Made to order, 50 working days</div>
-
-     <div class="line"></div>
-
-    <div class="product-text">
-
-       </div>
- </div>
-
+      <div class="product-specs">
+        <div>INFORMATION</div>
+        <div class="line"></div>
+        <div>800 €</div>
+        <div class="line"></div>
+        <div>Category: Coffee table</div>
+        <div class="line"></div>
+        <div>Target: indoor/outdoor</div>
+        <div class="line"></div>
+        <div>Dimension small: L.355 x d. 380 x h. 360/410 mm</div>
+        <div>Dimension middle: L.440 x d. 472 x h. 420/503 mm</div>
+        <div>Dimension high: L.355 x d. 386 x h. 525/575 mm</div>
+        <div class="line"></div>
+        <div>Color: Yellow / Black / Custom RAL</div>
+        <div class="line"></div>
+        <div>Material: Metal</div>
+        <div class="line"></div>
+        <div>Production: Made to order, 50 working days</div>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
 </main>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      const toggle = document.querySelector('.menu-toggle');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-      toggle.classList.toggle('active');
-    }
-  </script>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    const toggle = document.querySelector('.menu-toggle');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    toggle.classList.toggle('active');
+  }
+</script>
 </body>
-</html>
