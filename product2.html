@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,102 +5,132 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ANEMONA – MARA Studio</title>
 
-
 <style>
 body {
   margin: 0;
   background: #000;
   color: #ccc;
   font-family: "Century Gothic", sans-serif;
+  cursor: none;
 }
-   header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 1rem 2rem;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
 
-    .logo {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: #444;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
+/* CURSOR */
+.cursor {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2000;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s linear, filter 0.3s ease;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 12px rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cursor img {
+  width: 65%;
+  opacity: 0.9;
+}
 
-    .logo img {
-      width: 65%;
-      height: auto;
-    }
+/* hover glow */
+.cursor.hover {
+  transform: translate(-50%, -50%) scale(1.6);
+  box-shadow: 0 0 25px rgba(255,255,255,0.35);
+}
 
-    .menu-toggle {
-      width: 25px;
-      height: 15px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-    }
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .menu-toggle span {
-      height: 2px;
-      background-color: #fff;
-      width: 100%;
-      display: block;
-      transition: all 0.3s ease;
-    }
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
-    .menu-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    .menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-    .menu-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
-    }
+.logo img {
+  width: 65%;
+}
 
-    .menu {
-      display: none;
-      position: absolute;
-      top: 60px;
-      right: 2rem;
-      background-color: rgba(0, 0, 0, 0.9);
-      border: 1px solid #333;
-      padding: 1rem;
-      z-index: 999;
-    }
+.menu-toggle {
+  width: 25px;
+  height: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
 
-    .menu a {
-      display: block;
-      color: #ccc;
-      text-decoration: none;
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-    }
+.menu-toggle span {
+  height: 2px;
+  background-color: #fff;
+  width: 100%;
+  display: block;
+  transition: all 0.3s ease;
+}
 
-    .menu a:hover {
-      color: #fff;
-    }
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
 
+.menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 2rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid #333;
+  padding: 1rem;
+  z-index: 999;
+}
 
+.menu a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.menu a:hover {
+  color: #fff;
+}
+
+/* LAYOUT */
 .product-wrapper {
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr; 
+  grid-template-columns: 1.3fr 0.7fr;
   gap: 100px;
   max-width: 1500px;
-  margin: 120px auto 60px; 
+  margin: 120px auto 60px;
   padding: 0 60px;
 }
-
 
 .product-images {
   display: flex;
@@ -111,7 +140,6 @@ body {
 
 .product-images img {
   width: 100%;
-  display: block;
   max-width: 600px;
 }
 
@@ -125,7 +153,6 @@ body {
 .product-title {
   font-size: 1.8rem;
   letter-spacing: 6px;
-  color: #ccc;
 }
 
 .product-text {
@@ -135,7 +162,6 @@ body {
   white-space: pre-line;
 }
 
-
 .product-specs {
   font-size: 0.9rem;
   line-height: 2;
@@ -144,12 +170,51 @@ body {
 .line {
   border-bottom: 1px solid #333;
   margin: 15px 0;
-  width: 100%;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  body {
+    cursor: default;
+  }
+
+  .cursor {
+    display: none;
+  }
+
+  .product-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 20px;
+    margin: 100px auto;
+  }
+
+  .product-info {
+    padding-left: 0;
+  }
+
+  .product-title {
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+  }
+
+  .product-text {
+    font-size: 0.85rem;
+  }
+
+  .menu {
+    right: 1rem;
+  }
 }
 </style>
 </head>
 
 <body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor">
+  <img src="logo.png">
+</div>
 
 <header>
   <a href="index.html" class="logo">
@@ -162,9 +227,7 @@ body {
     <span></span>
   </div>
 
-
-
-   <div class="menu" id="menu">
+  <div class="menu" id="menu">
     <a href="index.html">0.1 HOMEPAGE</a>
     <a href="about.html">0.2 ABOUT</a>
     <a href="interiors.html">0.3 INTERIORS</a>
@@ -177,21 +240,16 @@ body {
   </div>
 </header>
 
- <main>
+<main>
   <div class="product-wrapper">
-    
+
     <div class="product-images">
-      <img src="mara-studio/anemona1.jpg" alt="">
-      <img src="mara-studio/anemona2.jpg" alt="">
+      <img src="mara-studio/anemona1.jpg">
+      <img src="mara-studio/anemona2.jpg">
     </div>
 
-    
     <div class="product-info">
       <div class="product-title">ANEMONA</div>
-
-      <div class="product-text">
-       
-      </div>
 
       <div class="product-specs">
         <div>INFORMATION</div>
@@ -212,8 +270,9 @@ body {
         <div class="line"></div>
         <div>Production: Made to order, 50 working days</div>
         <div class="line"></div>
+      </div>
 
- <div class="product-text">
+      <div class="product-text">
 Mesh. Movement. Breath.
 Like an anemone underwater
 every line breathes, every shape whispers.
@@ -223,19 +282,40 @@ dancing beneath the surface of the sea.
 Part of the On’ea collection, 
 where the lounge meets minimalism, 
 and space embraces the quiet beauty of form.
-  
-        
       </div>
     </div>
+
   </div>
 </main>
 
 <script>
-  function toggleMenu() {
-    const menu = document.getElementById('menu');
-    const toggle = document.querySelector('.menu-toggle');
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    toggle.classList.toggle('active');
-  }
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  const toggle = document.querySelector('.menu-toggle');
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  toggle.classList.toggle('active');
+}
+
+/* CURSOR */
+const cursor = document.getElementById("cursor");
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.top = e.clientY + "px";
+  cursor.style.left = e.clientX + "px";
+});
+
+/* HOVER EFFECT */
+const hoverElements = document.querySelectorAll("a, .menu-toggle, img");
+
+hoverElements.forEach(el => {
+  el.addEventListener("mouseenter", () => {
+    cursor.classList.add("hover");
+  });
+  el.addEventListener("mouseleave", () => {
+    cursor.classList.remove("hover");
+  });
+});
 </script>
+
 </body>
+</html>
