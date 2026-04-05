@@ -6,7 +6,6 @@
 <title>About | Mariela Ganova</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 /* --- Общ стил --- */
@@ -21,6 +20,7 @@ body {
   cursor: none; /* Скриваме стандартния курсор */
 }
 
+/* HEADER */
 header {
   position: fixed;
   top: 0;
@@ -34,8 +34,8 @@ header {
 }
 
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-color: #444;
   display: flex;
@@ -46,8 +46,7 @@ header {
 }
 
 .logo img {
-  width: 65%;
-  height: auto;
+  width: 70%;
   display: block;
 }
 
@@ -55,12 +54,7 @@ header {
   transform: scale(1.05);
 }
 
-.icons {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
+/* MENU */
 .menu-toggle {
   width: 25px;
   height: 18px;
@@ -81,11 +75,9 @@ header {
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-
 .menu-toggle.active span:nth-child(2) {
   opacity: 0;
 }
-
 .menu-toggle.active span:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
@@ -95,7 +87,8 @@ header {
   position: absolute;
   top: 60px;
   right: 2rem;
-  background-color: #000;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
   border: 1px solid #333;
   padding: 1rem;
   z-index: 999;
@@ -107,6 +100,7 @@ header {
   text-decoration: none;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
+  transition: color 0.3s ease;
 }
 
 .menu a:hover {
@@ -119,6 +113,7 @@ header {
   padding: 120px 5% 60px;
   gap: 60px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .photo {
@@ -126,15 +121,19 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeInSlow 4.5s ease forwards;
 }
 
 .photo img {
   width: auto;
-  height: 119.5vh;
+  max-height: 90vh;
   object-fit: contain;
-  opacity: 0;
-  animation: fadeInSlow 4.5s ease forwards;
+  border-radius: 6px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.photo img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1) blur(0.5px);
 }
 
 .text-section {
@@ -144,16 +143,12 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 119.5vh;
-  opacity: 0;
-  animation: fadeInSlow 5s ease 1s forwards;
 }
 
 .text-section > div {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  gap: 20px;
 }
 
 .text-section h2 {
@@ -173,24 +168,15 @@ header {
 .text-section hr {
   border: none;
   border-top: 1px solid #333;
-  margin: 20px 0;
 }
 
+/* FOOTER */
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
   text-align: center;
   color: #aaa;
   font-size: 0.8rem;
   padding: 1rem;
-}
-
-/* --- Анимация --- */
-@keyframes fadeInSlow {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
+  margin-top: 60px;
 }
 
 /* --- Мобилна версия --- */
@@ -201,18 +187,12 @@ footer {
   }
 
   .photo img {
-    height: auto;
-    max-width: 90%;
+    max-height: 50vh;
+    width: 90%;
   }
 
   .text-section {
     text-align: center;
-    height: auto;
-    padding-top: 40px;
-  }
-
-  .text-section > div {
-    height: auto;
   }
 }
 
@@ -221,14 +201,16 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   pointer-events: none;
   border-radius: 50%;
   overflow: hidden;
   z-index: 2000;
   transform: translate(-50%, -50%);
-  transition: transform 0.05s linear;
+  transition: transform 0.08s linear;
+  backdrop-filter: blur(5px);
+  background: rgba(255,255,255,0.05);
 }
 
 .cursor-logo img {
@@ -238,18 +220,17 @@ footer {
 }
 </style>
 </head>
+
 <body>
 
 <header>
   <a href="index.html" class="logo">
     <img src="logo.png" alt="Logo">
   </a>
-  <div class="icons">
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
   <div class="menu" id="menu">
     <a href="index.html">0.1 HOMEPAGE</a>
@@ -271,16 +252,16 @@ footer {
   <div class="text-section">
     <div>
       <h2>PHILOSOPHY</h2>
-      <p>MARIELA GANOVA IS THE FOUNDER AND THE OWNER OF THE STUDIO AND SERVES AS ITS DIRECTOR AND CHIEF DESIGNER. MARIELA HAS A MASTER'S DEGREE IN ENGINEERING DESIGN FROM THE FORESTRY UNIVERSITY. IN THE COURSE OF HER PRACTICE AND WORK, SHE HAS BEEN AWARDED NUMEROUS AWARDS AND DISTINCTIONS. WE HAVE COMPLETED OVER 100 PROJECTS. COOPERATING WITH OUR STUDIO, YOU GET HIGH-QUALITY SERVICES AND COMFORTABLE SPACE THAT WILL BE RELEVANT FOR MANY YEARS TO COME. I BELIEVE DESIGN IS A TANGIBLE MANIFESTATION OF A CAPTURED FEELING.</p>
+      <p>MARIELA GANOVA IS THE FOUNDER AND THE OWNER OF THE STUDIO AND SERVES AS ITS DIRECTOR AND CHIEF DESIGNER...</p>
       <hr>
       <h2>OUR WORKS</h2>
-      <p>OUR STUDIO SPECIALIZES IN DESIGNING RESIDENTIAL, LUXURY APARTMENTS, OFFICES, AND COMMERCIAL SPACE. ALSO WE CREATE A DESIGN - PRODUCT DESIGN, THAT IS A VERY SPECIAL ELEMENT OF OUR WORK. WE VALUE AND FOCUS ON MINIMALIST AND FUNCTIONAL CREATION, BASED ON A VERY COMPLEX AND PRECISE DESIGN. DESIGNING IS AN ART TO US, AND WE ALWAYS ASPIRE TO LEAVE A DISTINCT IMPRINT AND NOTHING ELSE.</p>
+      <p>OUR STUDIO SPECIALIZES IN DESIGNING RESIDENTIAL, LUXURY APARTMENTS...</p>
       <hr>
       <h2>OUR VALUES</h2>
-      <p>OUR WORK LIVES AT THE INTERSECTION OF DESIGN AND CONTEMPORARY ART. OUR SOLUTIONS ARE FUNCTIONAL AND MODERN; THEY ARE AT THE HEART OF THE TRENDS.</p>
+      <p>OUR WORK LIVES AT THE INTERSECTION OF DESIGN AND CONTEMPORARY ART...</p>
       <hr>
       <h2>OUR MISSION</h2>
-      <p>IT IS A PRIVILEGE TO DESIGN AND PLAN THE SPACE IN WHICH WE LIVE. WE TAKE THIS MISSION WITH GREAT HONOR AND BY THAT, WE LET OUR CREATIONS SHAPE US.</p>
+      <p>IT IS A PRIVILEGE TO DESIGN AND PLAN THE SPACE IN WHICH WE LIVE...</p>
     </div>
   </div>
 </div>
@@ -302,7 +283,7 @@ function toggleMenu() {
   toggle.classList.toggle('active');
 }
 
-// --- Следване на мишката с логото ---
+/* Курсор следва мишката */
 const cursor = document.querySelector('.cursor-logo');
 document.addEventListener('mousemove', e => {
   cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
