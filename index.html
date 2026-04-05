@@ -182,6 +182,36 @@ footer {
   color: #aaa;
 }
 
+     .mdw-text {
+    color: #ccc;
+    font-size: 1rem;
+    max-width: 700px;
+    margin: 1.5rem auto 2rem auto;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+ .dopir-invitation {
+  max-width: 400px;
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  opacity: 0.85; /* леко прозрачна */
+  border-radius: 4px;
+  animation: fadeIn 3s ease forwards;
+}
+    @media (max-width: 768px) {
+    .mdw-text {
+      font-size: 0.9rem;
+      max-width: 90%;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .dopir-invitation {
+      max-width: 300px;
+    }
+  }
+</style>
+
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -222,10 +252,15 @@ footer {
 
   <div class="overlay">
     <div class="middle">
-      <div class="center-text">
-        <h1>INTERIOR AND PRODUCT DESIGN STUDIO</h1>
-      </div>
-    </div>
+      <div class="middle">
+  <div class="center-text">
+  <h1>INTERIOR AND PRODUCT DESIGN STUDIO</h1>
+  <p class="mdw-text">
+    This year, MARA Studio will be part of a collaboration of artists, designers, and creators at the world furniture and design exhibition Milano Design Week 2026 and Fuorisalone, under the exhibition name DOPIR.
+  </p>
+  <img src="INVITATION-dopir.jpg" alt="DOPIR Invitation" class="dopir-invitation">
+</div>
+</div>
     <div class="bottom">
   <div class="social-icons">
     <a href="https://instagram.com/marielaganova" target="_blank"><i class="fab fa-instagram"></i></a>
