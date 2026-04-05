@@ -14,7 +14,7 @@ body {
   cursor: none;
 }
 
-/* CURSOR */
+/* --- CURSOR --- */
 .cursor {
   width: 40px;
   height: 40px;
@@ -26,16 +26,18 @@ body {
   z-index: 2000;
   transform: translate(-50%, -50%);
   transition: transform 0.08s linear;
-  background: #222;
+  background: rgba(34,34,34,0.8);
   display: flex;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(3px);
 }
 .cursor img {
-  width: 65%;
+  width: 60%;
+  height: auto;
 }
 
-/* HEADER */
+/* --- HEADER --- */
 header {
   position: fixed;
   top: 0;
@@ -49,18 +51,23 @@ header {
 }
 
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-color: #444;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
 .logo img {
-  width: 65%;
+  width: 70%;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .menu-toggle {
@@ -99,6 +106,7 @@ header {
   border: 1px solid #333;
   padding: 1rem;
   z-index: 999;
+  backdrop-filter: blur(8px);
 }
 
 .menu a {
@@ -107,13 +115,14 @@ header {
   text-decoration: none;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
+  transition: color 0.3s ease;
 }
 
 .menu a:hover {
   color: #fff;
 }
 
-/* LAYOUT */
+/* --- LAYOUT --- */
 .product-wrapper {
   display: grid;
   grid-template-columns: 1.3fr 0.7fr;
@@ -132,6 +141,13 @@ header {
 .product-images img {
   width: 100%;
   max-width: 600px;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  border-radius: 6px;
+}
+
+.product-images img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05) blur(0.5px);
 }
 
 .product-info {
@@ -164,7 +180,7 @@ header {
   width: 100%;
 }
 
-/* MOBILE */
+/* --- MOBILE --- */
 @media (max-width: 900px) {
   body {
     cursor: default;
@@ -205,11 +221,10 @@ header {
 
 <!-- CURSOR -->
 <div class="cursor" id="cursor">
-  <img src="logo.png">
+  <img src="logo.png" alt="Cursor Logo">
 </div>
 
 <header>
-
 <a href="index.html" class="logo">
   <img src="logo.png" alt="Logo">
 </a>
@@ -235,14 +250,13 @@ header {
 
 <div class="product-wrapper">
   <div class="product-images">
-    <img src="mara-studio/sunlounger1.jpg">
-    <img src="mara-studio/sunlounger2.jpg">
-    <img src="mara-studio/sunlounger3.jpg">
-    <img src="mara-studio/sunlounger4.jpg">
+    <img src="mara-studio/sunlounger1.jpg" alt="On'ea Sun lounger">
+    <img src="mara-studio/sunlounger2.jpg" alt="On'ea Sun lounger">
+    <img src="mara-studio/sunlounger3.jpg" alt="On'ea Sun lounger">
+    <img src="mara-studio/sunlounger4.jpg" alt="On'ea Sun lounger">
   </div>
 
   <div class="product-info">
-
     <div class="product-title">ON'EA</div>
 
     <div class="product-specs">
@@ -336,7 +350,6 @@ you will disappear
 without moving
 !
     </div>
-
   </div>
 </div>
 
@@ -344,16 +357,15 @@ without moving
 function toggleMenu() {
   const menu = document.getElementById('menu');
   const toggle = document.querySelector('.menu-toggle');
+
   menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
   toggle.classList.toggle('active');
 }
 
 /* CURSOR FOLLOW */
 const cursor = document.getElementById("cursor");
-
 document.addEventListener("mousemove", (e) => {
-  cursor.style.top = e.clientY + "px";
-  cursor.style.left = e.clientX + "px";
+  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
 });
 </script>
 
