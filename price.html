@@ -175,20 +175,25 @@ details[open] summary::before {
   position: fixed;
   top: 0;
   left: 0;
-  width: 50px;
-  height: 50px;
+  width: 36px;
+  height: 36px;
   pointer-events: none;
   border-radius: 50%;
   overflow: hidden;
   z-index: 2000;
   transform: translate(-50%, -50%);
-  transition: transform 0.05s linear;
-}
+  
+  backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.06);
+  box-shadow: 0 0 12px rgba(255,255,255,0.08);
 
+  transition: transform 0.12s ease-out;
+}
 .cursor-logo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0.9;
 }
 </style>
 </head>
