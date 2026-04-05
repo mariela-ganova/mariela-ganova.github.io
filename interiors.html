@@ -17,7 +17,7 @@ body {
   font-family: 'Abel', sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
-  cursor: none; /* Скриваме стандартния курсор */
+  cursor: none;
 }
 
 header {
@@ -33,25 +33,24 @@ header {
 }
 
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-color: #444;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
 .logo img {
-  width: 65%;
+  width: 70%;
   height: auto;
 }
 
-.icons {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .menu-toggle {
@@ -88,7 +87,8 @@ header {
   position: absolute;
   top: 60px;
   right: 2rem;
-  background-color: rgba(0, 0, 0, 0.9);
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
   border: 1px solid #333;
   padding: 1rem;
   z-index: 999;
@@ -100,6 +100,7 @@ header {
   text-decoration: none;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
+  transition: color 0.3s ease;
 }
 
 .menu a:hover {
@@ -138,12 +139,13 @@ header {
   height: auto;
   display: block;
   cursor: pointer;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  border-radius: 6px;
 }
 
 .projects-grid a:hover img {
   transform: scale(1.05);
-  opacity: 0.9;
+  filter: brightness(1.1) blur(0.5px);
 }
 
 .project-title,
@@ -181,14 +183,16 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   pointer-events: none;
   border-radius: 50%;
   overflow: hidden;
   z-index: 2000;
   transform: translate(-50%, -50%);
-  transition: transform 0.05s linear;
+  transition: transform 0.08s linear;
+  backdrop-filter: blur(5px);
+  background: rgba(255,255,255,0.05);
 }
 
 .cursor-logo img {
@@ -204,12 +208,10 @@ header {
   <a href="index.html" class="logo">
     <img src="logo.png" alt="Logo">
   </a>
-  <div class="icons">
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
 </header>
 
@@ -234,14 +236,12 @@ header {
       <p class="project-location">Sofia, Bulgaria</p>
       <p class="project-type">Private Residence</p>
     </a>
-
     <a href="project2.html">
       <img src="projects/hotel-sentro-main.jpg" alt="Sentro Hotel">
       <p class="project-title">SENTRO</p>
       <p class="project-location">Sofia, Bulgaria</p>
       <p class="project-type">Hotel</p>
     </a>
-
     <a href="project3.html">
       <img src="projects/maisonette-main.jpg" alt="Maisonette">
       <p class="project-title">MAISONETTE</p>
