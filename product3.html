@@ -14,7 +14,7 @@ body {
   cursor: none;
 }
 
-/* CURSOR */
+/* --- CURSOR --- */
 .cursor {
   width: 42px;
   height: 42px;
@@ -25,10 +25,8 @@ body {
   pointer-events: none;
   z-index: 2000;
   transform: translate(-50%, -50%);
-  transition: transform 0.08s linear, filter 0.3s ease;
+  transition: transform 0.08s linear;
   background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(4px);
-  box-shadow: 0 0 12px rgba(255,255,255,0.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,11 +34,6 @@ body {
 .cursor img {
   width: 65%;
   opacity: 0.9;
-}
-
-.cursor.hover {
-  transform: translate(-50%, -50%) scale(1.6);
-  box-shadow: 0 0 25px rgba(255,255,255,0.35);
 }
 
 /* HEADER */
@@ -140,6 +133,12 @@ header {
 .product-images img {
   width: 100%;
   max-width: 600px;
+  border-radius: 6px;
+  transition: transform 0.5s ease;
+}
+
+.product-images img:hover {
+  transform: scale(1.03);
 }
 
 .product-info {
@@ -212,12 +211,12 @@ header {
 
 <!-- CURSOR -->
 <div class="cursor" id="cursor">
-  <img src="logo.png">
+  <img src="logo.png" alt="Cursor Logo">
 </div>
 
 <header>
   <a href="index.html" class="logo">
-    <img src="logo.png">
+    <img src="logo.png" alt="Logo">
   </a>
 
   <div class="menu-toggle" onclick="toggleMenu()">
@@ -243,11 +242,11 @@ header {
   <div class="product-wrapper">
 
     <div class="product-images">
-      <img src="mara-studio/tre1.jpg">
-      <img src="mara-studio/tre2.png">
-      <img src="mara-studio/tre3.jpg">
-      <img src="mara-studio/tre4.jpg">
-      <img src="mara-studio/tre5.jpg">
+      <img src="mara-studio/tre1.jpg" alt="TRE image 1">
+      <img src="mara-studio/tre2.png" alt="TRE image 2">
+      <img src="mara-studio/tre3.jpg" alt="TRE image 3">
+      <img src="mara-studio/tre4.jpg" alt="TRE image 4">
+      <img src="mara-studio/tre5.jpg" alt="TRE image 5">
     </div>
 
     <div class="product-info">
@@ -299,24 +298,10 @@ function toggleMenu() {
   toggle.classList.toggle('active');
 }
 
-/* CURSOR */
+/* CURSOR FOLLOW */
 const cursor = document.getElementById("cursor");
-
 document.addEventListener("mousemove", (e) => {
-  cursor.style.top = e.clientY + "px";
-  cursor.style.left = e.clientX + "px";
-});
-
-/* HOVER EFFECT */
-const hoverElements = document.querySelectorAll("a, .menu-toggle, img");
-
-hoverElements.forEach(el => {
-  el.addEventListener("mouseenter", () => {
-    cursor.classList.add("hover");
-  });
-  el.addEventListener("mouseleave", () => {
-    cursor.classList.remove("hover");
-  });
+  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
 });
 </script>
 
