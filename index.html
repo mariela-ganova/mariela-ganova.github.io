@@ -206,13 +206,28 @@ footer {
   border-radius: 4px;
   animation: fadeIn 3s ease forwards;
 }
-    @media (max-width: 768px) {
-    .mdw-text {
-      font-size: 0.9rem;
-      max-width: 90%;
-      margin: 1rem auto 1.5rem auto;
-    }
+@media (max-width: 768px) {
 
+  .mdw-text {
+    font-size: 0.9rem;
+    max-width: 90%;
+    margin: 1rem auto 1.5rem auto;
+  }
+
+  .middle {
+    align-items: flex-start;
+    padding-top: 15vh; /* адаптивно според екрана */
+  }
+
+  .center-text h1 {
+    font-size: 1.2rem;
+  }
+
+  .mdw-text {
+    font-size: 0.75rem;
+  }
+
+}
   .dopir-invitation {
       max-width: 300px;
     }
