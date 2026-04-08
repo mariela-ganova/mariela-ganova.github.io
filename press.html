@@ -7,190 +7,213 @@
 <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
 
 <style>
-/* --- Общ стил --- */
-body {
-  margin: 0;
-  background: #000;
-  color: #fff;
-  font-family: 'Abel', sans-serif;
-  overflow-x: hidden;
-  cursor: none; /* Скриваме стандартния курсор */
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  background:#000;
+  color:#ccc;
+  font-family:'Abel',sans-serif;
+  cursor:none;
 }
 
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  align-items: center;
-  z-index: 1000;
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:80px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 2rem;
+  background:#000;
+  z-index:1000;
 }
 
-.logo {
-  width: 40px;
-  height: 40px;
-  background-color: #444;
-  border-radius: 50%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.logo{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#444;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.logo img{width:70%;}
+
+/* BURGER */
+.menu-toggle{
+  width:25px;
+  height:18px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  cursor:pointer;
+  z-index:1100;
+}
+.menu-toggle span{
+  height:2px;
+  background:#fff;
+  width:100%;
+  transition:0.3s;
+}
+.menu-toggle.active span:nth-child(1){
+  transform:rotate(45deg) translate(5px,5px);
+}
+.menu-toggle.active span:nth-child(2){opacity:0;}
+.menu-toggle.active span:nth-child(3){
+  transform:rotate(-45deg) translate(6px,-6px);
 }
 
-.logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* MENU */
+.menu{
+  display:none;
+  position:fixed;
+  top:80px;
+  right:2rem;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(8px);
+  border:1px solid #333;
+  padding:1rem;
+  z-index:1050;
+}
+.menu a{
+  display:block;
+  color:#ccc;
+  text-decoration:none;
+  margin-bottom:0.5rem;
+  font-size:0.9rem;
+}
+.menu a:hover{color:#fff;}
+
+/* CONTENT */
+.container{
+  padding-top:140px;
+  width:90%;
+  max-width:1100px;
+  margin:auto;
 }
 
-.menu-toggle {
-  width: 25px;
-  height: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
+.title{
+  font-size:2rem;
+  letter-spacing:4px;
+  margin-bottom:3rem;
+  color:#fff;
 }
 
-.menu-toggle span {
-  background-color: #ccc;
-  height: 2px;
-  width: 100%;
-  display: block;
-  transition: all 0.3s ease;
+/* ITEM */
+.item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:3rem 0;
+  border-bottom:1px solid #333;
+
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s cubic-bezier(.25,.1,.25,1);
 }
 
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+.item.visible{
+  opacity:1;
+  transform:translateY(0);
 }
 
-.menu {
-  display: none;
-  position: absolute;
-  top: 60px;
-  right: 2rem;
-  background-color: rgba(0,0,0,0.9);
-  border: 1px solid #333;
-  padding: 1rem;
-  z-index: 999;
+/* IMAGE */
+.image{
+  width:42%;
+  position:relative;
+  overflow:visible;
 }
 
-.menu a {
-  display: block;
-  color: #ccc;
-  text-decoration: none;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
+.image img{
+  width:100%;
+  filter:grayscale(100%);
+  transition:all 0.6s ease;
+  position:relative;
+  z-index:1;
 }
 
-.menu a:hover {
-  color: #fff;
+.image:hover img{
+  filter:grayscale(0%);
+  transform:scale(1.35);
+  z-index:5;
 }
 
-/* --- Централна галерия --- */
-.carousel-wrapper {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.image:hover::after{
+  content:"";
+  position:absolute;
+  inset:-20px;
+  background:radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+  z-index:0;
 }
 
-.carousel {
-  position: relative;
-  width: 100%;
-  height: 33vh; 
-  overflow: hidden;
+/* TEXT */
+.text{
+  width:50%;
+  transition:0.4s cubic-bezier(.25,.1,.25,1);
 }
 
-.carousel-track {
-  display: flex;
-  transition: transform 0.1s linear;
+.item:hover .text{
+  transform:translateX(10px);
 }
 
-.carousel-item {
-  flex: 0 0 auto;
-  margin: 0 1rem;
-  text-align: center;
+.text h3{
+  color:#fff;
+  margin-bottom:1rem;
+  font-size:1.1rem;
+  letter-spacing:1px;
 }
 
-.carousel-item img {
-  height: 100%;
-  transition: opacity 0.4s ease, transform 0.3s ease;
-  cursor: pointer;
-  display: block;
+.text a{
+  color:#aaa;
+  font-size:0.85rem;
+  text-decoration:none;
 }
 
-.carousel-item img.color {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
+.text a:hover{color:#fff;}
 
-.carousel-item:hover img.color {
-  opacity: 1;
+/* CURSOR */
+.cursor-logo{
+  position:fixed;
+  top:0;
+  left:0;
+  width:36px;
+  height:36px;
+  pointer-events:none;
+  border-radius:50%;
+  overflow:hidden;
+  z-index:2000;
+  transform:translate(-50%,-50%);
+  backdrop-filter:blur(6px);
+  background:rgba(255,255,255,0.06);
 }
+.cursor-logo img{width:100%;}
 
-.carousel-item-inner {
-  position: relative;
-  display: inline-block;
-}
+/* MOBILE */
+@media(max-width:900px){
+  body{cursor:default;}
+  .cursor-logo{display:none;}
 
-.caption {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-/* --- Мобилна версия --- */
-@media (max-width: 900px) {
-  .carousel-wrapper {
-    height: auto;
-    padding: 60px 0;
+  .item{
+    flex-direction:column;
+    gap:2rem;
   }
-  .carousel {
-    height: 50vh;
-  }
-  .carousel-item {
-    margin: 0 0.5rem;
-  }
-}
 
-/* --- Курсор с логото --- */
-.cursor-logo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 50px;
-  height: 50px;
-  pointer-events: none;
-  border-radius: 50%;
-  overflow: hidden;
-  z-index: 2000;
-  transform: translate(-50%, -50%);
-  transition: transform 0.05s linear;
-}
-
-.cursor-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  .image,.text{width:100%;}
 }
 </style>
 </head>
+
 <body>
 
 <header>
-  <a href="index.html" class="logo"><img src="logo.png" alt="Logo"></a>
+  <a href="index.html" class="logo">
+    <img src="logo.png">
+  </a>
+
   <div class="menu-toggle" onclick="toggleMenu()">
     <span></span>
     <span></span>
@@ -206,94 +229,127 @@ header {
   <a href="mara-studio.html">0.5 MARA studio</a>
   <a href="price.html">0.6 PRICE</a>
   <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
-  <a href="awards-press.html">0.8 AWARDS & PRESS</a>
+  <a href="awards-press.html">0.8 BACK</a>
   <a href="contact.html">0.9 CONTACT</a>
 </div>
 
-<div class="carousel-wrapper">
-  <div class="carousel" id="carousel">
-    <div class="carousel-track" id="carouselTrack">
-      <!-- Примерни публикации -->
-      <div class="carousel-item">
-        <a href="publication1.html">
-          <div class="carousel-item-inner">
-            <img src="img1-bw.jpg" alt="Publication 1">
-            <img src="img1-color.jpg" class="color" alt="Publication 1">
-          </div>
-        </a>
-        <div class="caption">Publication 1</div>
-      </div>
-      <div class="carousel-item">
-        <a href="publication2.html">
-          <div class="carousel-item-inner">
-            <img src="img2-bw.jpg" alt="Publication 2">
-            <img src="img2-color.jpg" class="color" alt="Publication 2">
-          </div>
-        </a>
-        <div class="caption">Publication 2</div>
-      </div>
-      <div class="carousel-item">
-        <a href="publication3.html">
-          <div class="carousel-item-inner">
-            <img src="img3-bw.jpg" alt="Publication 3">
-            <img src="img3-color.jpg" class="color" alt="Publication 3">
-          </div>
-        </a>
-        <div class="caption">Publication 3</div>
-      </div>
-      <!-- Добави останалите по същия начин -->
-    </div>
+<div class="container">
+<div class="title">PRESS</div>
+
+<div class="item">
+  <div class="image"><img src="awards-press/press/9press-2023-md-magazin.jpg"></div>
+  <div class="text">
+    <h3>DMT Design Materials Technology , 05/2023</h3>
+    <a href="https://dmtmagazine.info/issue-dmt/05-2023/" target="_blank">View</a>
   </div>
 </div>
 
-<!-- Курсор с логото -->
-<div class="cursor-logo"><img src="logo.png" alt="Cursor Logo"></div>
+<div class="item">
+  <div class="image"><img src="awards-press/press/8press-2020-Serip Design Catalog.jpg"></div>
+  <div class="text">
+    <h3>SERIP - Organic Design, Project Book</h3>
+    <a href="https://seripdesign.com/en/project/14/nature-the-contemporary-beauty-of-modernity" target="_blank">View</a>
+  </div>
+</div>
+
+<div class="item">
+  <div class="image"><img src="awards-press/press/7press-2020-md-magazin.jpg"></div>
+  <div class="text">
+    <h3>MD Magazin International N4 Aerial Photography Award , 11/2020</h3>
+    <a href="https://md-magazine.info/md-issue/04-2020/" target="_blank">View</a>
+  </div>
+</div>
+
+<div class="item">
+  <div class="image"><img src="awards-press/press/6press-2020-flexform.jpg"></div>
+  <div class="text">
+    <h3>FLEXFORM Projects / residential / Bulgaria / Sofia</h3>
+    <a href="https://www.flexform.it/en/inspirations/tools/projects/residential/bulgaria-sofia" target="_blank">View</a>
+  </div>
+</div>
+
+<div class="item">
+  <div class="image"><img src="awards-press/press/5press-2019-nash-dom.jpg"></div>
+  <div class="text">
+    <h3>Nash Dom , Interior of the Year , Issue 9 | 2019</h3>
+    <a href="https://www.nashdom-bg.com/issues/%D0%B1%D1%80%D0%BE%D0%B9-09-2019/" target="_blank">View</a>
+  </div>
+</div>
+
+<div class="item">
+  <div class="image"><img src="awards-press/press/4press-2018-md-magazin.jpg"></div>
+  <div class="text">
+    <h3>MD Magazin N2, I Saloni Milano, 2018</h3>
+    <a href="https://md-magazine.info/md-issue/02-2018/" target="_blank">View</a>
+  </div>
+</div>
+
+<div class="item">
+  <div class="image"><img src="awards-press/press/3press-2018-imm_cologne.jpg"></div>
+  <div class="text">
+    <h3>IMM Cologne Exhibition "Bowl" Lamp for Wolfram Studio</h3>
+    <a href="https://www.imm-cologne.de/die-messe/rueckblick/das-haus/das-haus-2018.php" target="_blank">View</a>
+  </div>
+</div>
+
+<div class="item">
+  <div class="image"><img src="awards-press/press/2press-2017-md-magazin.jpg"></div>
+  <div class="text">
+    <h3>MD Magazin, N1, 2017</h3>
+    <a href="https://md-magazine.info/md-issue/01-2017/" target="_blank">View</a>
+  </div>
+</div>
+
+<div class="item">
+  <div class="image"><img src="awards-press/press/1press-2017-salone satelite.jpg"></div>
+  <div class="text">
+    <h3>1-st Bulgarian Design Group in Salone Satellite, Milano, 2017</h3>
+  </div>
+</div>
+
+</div>
+
+<div class="cursor-logo">
+  <img src="logo.png">
+</div>
 
 <script>
-// Меню
-function toggleMenu() {
-  const menu = document.getElementById('menu');
-  const toggle = document.querySelector('.menu-toggle');
-  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+function toggleMenu(){
+  const menu=document.getElementById('menu');
+  const toggle=document.querySelector('.menu-toggle');
+  menu.style.display=menu.style.display==='block'?'none':'block';
   toggle.classList.toggle('active');
 }
 
-// Carousel движение
-const track = document.getElementById('carouselTrack');
-const carousel = document.getElementById('carousel');
-let offset = 0;
-let direction = 0;
-let animationId;
+/* CURSOR */
+const cursor=document.querySelector('.cursor-logo');
+let mouseX=0,mouseY=0,posX=0,posY=0;
 
-function animate() {
-  offset += direction * 0.5; // скорост
-  track.style.transform = `translateX(${offset}px)`;
-  animationId = requestAnimationFrame(animate);
+document.addEventListener('mousemove',e=>{
+  mouseX=e.clientX;
+  mouseY=e.clientY;
+});
+
+function animate(){
+  posX+=(mouseX-posX)*0.15;
+  posY+=(mouseY-posY)*0.15;
+  cursor.style.transform=`translate(${posX}px,${posY}px) translate(-50%,-50%)`;
+  requestAnimationFrame(animate);
 }
+animate();
 
-carousel.addEventListener('mousemove', (e) => {
-  const rect = carousel.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  if (x < rect.width / 2) {
-    direction = 1; // наляво
-    if (!animationId) animate();
-  } else {
-    direction = -1; // надясно
-    if (!animationId) animate();
-  }
-});
+/* SCROLL ANIMATION */
+const items=document.querySelectorAll('.item');
 
-carousel.addEventListener('mouseleave', () => {
-  direction = 0;
-  cancelAnimationFrame(animationId);
-  animationId = null;
-});
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+},{threshold:0.2});
 
-// Следване на мишката с логото
-const cursor = document.querySelector('.cursor-logo');
-document.addEventListener('mousemove', e => {
-  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
-});
+items.forEach(item=>observer.observe(item));
 </script>
 
 </body>
