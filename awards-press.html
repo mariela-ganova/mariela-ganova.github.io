@@ -63,7 +63,7 @@ header {
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  z-index: 1100; /* винаги над съдържанието */
+  z-index: 1100;
 }
 
 .menu-toggle span {
@@ -113,40 +113,30 @@ header {
 
 .content {
   padding-top: 120px;
-  padding-left: 4rem;
   max-width: 900px;
 }
 
-.title {
-  font-size: 1.6rem;
-  letter-spacing: 3px;
-  margin-bottom: 3rem;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-.section {
+/* --- CENTER BUTTONS --- */
+.center-nav {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  border-top: 1px solid #555;
-  padding: 1.5rem 0;
+  gap: 4rem;
 }
 
-.section:last-child {
-  border-bottom: 1px solid #555;
+.center-nav a {
+  font-size: 2rem;
+  letter-spacing: 4px;
+  text-decoration: none;
+  color: #888;
+  transition: all 0.3s ease;
 }
 
-.number {
-  width: 60px;
-  font-size: 1rem;
-  color: #aaa;
-  margin-right: 2rem;
-}
-
-.text {
-  font-size: 1rem;
-  line-height: 1.8;
-  text-transform: uppercase;
-  color: #ccc;
+.center-nav a:hover {
+  color: #fff;
+  transform: scale(1.1);
 }
 
 /* --- Курсор --- */
@@ -186,17 +176,9 @@ header {
     display: none;
   }
 
-  .content {
-    padding: 120px 1.5rem;
-  }
-
-  .logo {
-    width: 50px;
-    height: 50px;
-  }
-
-  .menu {
-    right: 1rem;
+  .center-nav {
+    flex-direction: column;
+    gap: 2rem;
   }
 }
 </style>
@@ -230,7 +212,10 @@ header {
 
 <div class="content">
   <main>
-    <!-- съдържание -->
+    <div class="center-nav">
+      <a href="awards.html">AWARDS</a>
+      <a href="press.html">PRESS</a>
+    </div>
   </main>
 </div>
 
