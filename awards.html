@@ -8,203 +8,192 @@
 <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-  background-color: #000;
-  color: #ccc;
-  font-family: 'Abel', sans-serif;
-  cursor: none;
+  background:#000;
+  color:#ccc;
+  font-family:'Abel',sans-serif;
+  cursor:none;
 }
 
 /* HEADER */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-  background-color: #000;
-  z-index: 1000;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:80px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 2rem;
+  background:#000;
+  z-index:1000;
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #444;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#444;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  transition:0.3s;
 }
 
-.logo img {
-  width: 70%;
-}
+.logo img { width:70%; }
 
-/* MENU */
+.logo:hover { transform:scale(1.05); }
+
+/* BURGER */
 .menu-toggle {
-  width: 25px;
-  height: 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
+  width:25px;
+  height:18px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  cursor:pointer;
+  z-index:1100;
 }
 
 .menu-toggle span {
-  height: 2px;
-  background-color: #fff;
-  width: 100%;
-  display: block;
-  transition: all 0.3s ease;
+  height:2px;
+  background:#fff;
+  width:100%;
+  transition:0.3s;
 }
 
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+.menu-toggle.active span:nth-child(1){
+  transform:rotate(45deg) translate(5px,5px);
+}
+.menu-toggle.active span:nth-child(2){ opacity:0; }
+.menu-toggle.active span:nth-child(3){
+  transform:rotate(-45deg) translate(6px,-6px);
 }
 
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
+/* MENU */
 .menu {
-  display: none;
-  position: fixed;
-  top: 80px;
-  right: 2rem;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(8px);
-  border: 1px solid #333;
-  padding: 1rem;
+  display:none;
+  position:fixed;
+  top:80px;
+  right:2rem;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(8px);
+  border:1px solid #333;
+  padding:1rem;
+  z-index:1050;
 }
 
 .menu a {
-  display: block;
-  color: #ccc;
-  text-decoration: none;
-  margin-bottom: 0.5rem;
+  display:block;
+  color:#ccc;
+  text-decoration:none;
+  margin-bottom:0.5rem;
+  font-size:0.9rem;
 }
 
-.menu a:hover {
-  color: #fff;
-}
+.menu a:hover { color:#fff; }
 
 /* CONTENT */
 .container {
-  padding-top: 140px;
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
+  padding-top:140px;
+  width:90%;
+  max-width:1100px;
+  margin:auto;
 }
 
 .title {
-  font-size: 2rem;
-  letter-spacing: 4px;
-  margin-bottom: 3rem;
-  color: #fff;
+  font-size:2rem;
+  letter-spacing:4px;
+  margin-bottom:3rem;
+  color:#fff;
 }
 
 /* ITEM */
 .item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 3rem 0;
-  border-bottom: 1px solid #333;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:3rem 0;
+  border-bottom:1px solid #333;
 }
 
-/* IMAGE LEFT */
+/* IMAGE */
 .image {
-  width: 30%;
-  overflow: hidden;
+  width:28%;
+  overflow:hidden;
 }
 
 .image img {
-  width: 100%;
-  filter: grayscale(100%);
-  transition: all 0.5s ease;
+  width:100%;
+  filter:grayscale(100%);
+  transition:0.6s ease;
 }
 
 .image img:hover {
-  filter: grayscale(0%);
-  transform: scale(1.4);
+  filter:grayscale(0%);
+  transform:scale(1.5);
 }
 
-/* TEXT RIGHT */
+/* TEXT */
 .text {
-  width: 60%;
+  width:65%;
 }
 
 .text h3 {
-  color: #fff;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
+  color:#fff;
+  margin-bottom:1rem;
+  font-size:1.1rem;
+  letter-spacing:1px;
 }
 
 .text p {
-  font-size: 0.9rem;
-  line-height: 1.7;
-  margin-bottom: 1rem;
+  font-size:0.9rem;
+  line-height:1.7;
+  margin-bottom:1rem;
 }
 
 .text a {
-  color: #aaa;
-  font-size: 0.85rem;
-  text-decoration: none;
+  color:#aaa;
+  font-size:0.85rem;
+  text-decoration:none;
 }
 
-.text a:hover {
-  color: #fff;
-}
+.text a:hover { color:#fff; }
 
 /* CURSOR */
 .cursor-logo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 36px;
-  height: 36px;
-  pointer-events: none;
-  border-radius: 50%;
-  overflow: hidden;
-  z-index: 2000;
-  transform: translate(-50%, -50%);
-  backdrop-filter: blur(6px);
-  background: rgba(255,255,255,0.06);
+  position:fixed;
+  top:0;
+  left:0;
+  width:36px;
+  height:36px;
+  pointer-events:none;
+  border-radius:50%;
+  overflow:hidden;
+  z-index:2000;
+  transform:translate(-50%,-50%);
+  backdrop-filter:blur(6px);
+  background:rgba(255,255,255,0.06);
+  box-shadow:0 0 12px rgba(255,255,255,0.08);
 }
 
-.cursor-logo img {
-  width: 100%;
-}
+.cursor-logo img { width:100%; }
 
 /* MOBILE */
-@media (max-width: 900px) {
-  body { cursor: default; }
-  .cursor-logo { display: none; }
+@media (max-width:900px){
+  body{ cursor:default; }
+  .cursor-logo{ display:none; }
 
-  .item {
-    flex-direction: column;
-    gap: 2rem;
+  .item{
+    flex-direction:column;
+    gap:2rem;
   }
 
-  .image, .text {
-    width: 100%;
-  }
+  .image,.text{ width:100%; }
 }
 </style>
 </head>
@@ -213,7 +202,7 @@ header {
 
 <header>
   <a href="index.html" class="logo">
-    <img src="logo.png">
+    <img src="logo.png" alt="">
   </a>
 
   <div class="menu-toggle" onclick="toggleMenu()">
@@ -223,111 +212,133 @@ header {
   </div>
 </header>
 
+<!-- FULL MENU -->
 <div class="menu" id="menu">
   <a href="index.html">0.1 HOMEPAGE</a>
+  <a href="about.html">0.2 ABOUT</a>
+  <a href="interiors.html">0.3 INTERIORS</a>
+  <a href="exteriors.html">0.4 EXTERIORS</a>
+  <a href="mara-studio.html">0.5 MARA studio</a>
+  <a href="price.html">0.6 PRICE</a>
+  <a href="management.html">0.7 MANAGEMENT & SUPPORT</a>
   <a href="awards-press.html">0.8 BACK</a>
+  <a href="contact.html">0.9 CONTACT</a>
 </div>
 
 <div class="container">
-  <div class="title">AWARDS</div>
+<div class="title">AWARDS</div>
 
-  <div class="item">
-    <div class="image">
-      <img src="awards-press/awards/7award-2026-bg-mebel.jpg">
-    </div>
-    <div class="text">
-      <h3>Bulgarian Furniture of the Year 2026 – WINNER</h3>
-      <p>1st place in the conceptual project category with the On'ea chaise lounge</p>
-    </div>
+<!-- 7 -->
+<div class="item">
+  <div class="image">
+    <img src="awards-press/awards/7award-2026-bg-mebel.jpg">
   </div>
+  <div class="text">
+    <h3>2026 - Bulgarian Furniture of the Year</h3>
+    <p>WINNER – 1st place in the conceptual project category with the On'ea chaise lounge.</p>
+  </div>
+</div>
 
-  <div class="item">
-    <div class="image">
-      <img src="awards-press/awards/6award-2025-ida-design-award.jpg">
-    </div>
-    <div class="text">
-      <h3>International Design Awards 2024 – Honorable Mention</h3>
-      <p>Casa di Sani project – transformation of a holiday house in Greece.</p>
-      <a href="https://www.idesignawards.com/books/IDA2024-book-INTERIOR.pdf" target="_blank">View Project</a>
-    </div>
+<!-- 6 -->
+<div class="item">
+  <div class="image">
+    <img src="awards-press/awards/6award-2025-ida-design-award.jpg">
   </div>
+  <div class="text">
+    <h3>2024 IDA -International Design Awards – Honorable Mention</h3>
+    <p>
+    On 2024 my studio was commissioned to create a new Holiday Let House design concept – Casa di Sani village area, Greece – giving life to an old house through a full restoration process and complete reorganization of spaces.
+    </p>
+    <a href="https://www.idesignawards.com/books/IDA2024-book-INTERIOR.pdf" target="_blank">View Publication</a>
+  </div>
+</div>
 
-  <div class="item">
-    <div class="image">
-      <img src="awards-press/awards/5award-2024-riva.jpg">
-    </div>
-    <div class="text">
-      <h3>Riva Design Awards 2024</h3>
-      <p>Outdoor Table and Bench category</p>
-      <a href="https://www.instagram.com/p/DIdOADdi0wm/" target="_blank">View</a>
-    </div>
+<!-- 5 -->
+<div class="item">
+  <div class="image">
+    <img src="awards-press/awards/5award-2024-riva.jpg">
   </div>
+  <div class="text">
+    <h3>2024 Riva Design Awards</h3>
+    <p>Prize for participation in 9° Design Awards – Outdoor Table and Bench</p>
+    <a href="https://www.instagram.com/p/DIdOADdi0wm/" target="_blank">View</a>
+  </div>
+</div>
 
-  <div class="item">
-    <div class="image">
-      <img src="awards-press/awards/4award-2024-big-see-awards.jpg">
-    </div>
-    <div class="text">
-      <h3>BIG SEE Interior Design Award 2024 – WINNER</h3>
-      <p>Maisonette "GENTLE" – modern and tranquil living concept.</p>
-      <a href="https://bigsee.eu/gentle/" target="_blank">View Project</a>
-    </div>
+<!-- 4 -->
+<div class="item">
+  <div class="image">
+    <img src="awards-press/awards/4award-2024-big-see-awards.jpg">
   </div>
+  <div class="text">
+    <h3>2024 BIG SEE Interior Design Award  – WINNER</h3>
+    <p>
+    Maisonette "GENTLE" – a project where modernity meets tranquility in a seamless fusion of form and function, redefining spatial boundaries.
+    </p>
+    <a href="https://bigsee.eu/gentle/" target="_blank">View Project</a>
+  </div>
+</div>
 
-  <div class="item">
-    <div class="image">
-      <img src="awards-press/awards/3award-2019-gandia-blasco.jpg">
-    </div>
-    <div class="text">
-      <h3>International Outdoor Furniture Award – Runner-up</h3>
-      <a href="https://www.gandiablasco.com/en/historico_concurso/13th-international-outdoor-furniture-design-contest/" target="_blank">View</a>
-    </div>
+<!-- 3 -->
+<div class="item">
+  <div class="image">
+    <img src="awards-press/awards/3award-2019-gandia-blasco.jpg">
   </div>
+  <div class="text">
+    <h3>2019 - 13th International Outdoor Furniture Design Award</h3>
+    <p>Runner-up for Mr. Toby</p>
+    <a href="https://www.gandiablasco.com/en/historico_concurso/13th-international-outdoor-furniture-design-contest/" target="_blank">View</a>
+  </div>
+</div>
 
-  <div class="item">
-    <div class="image">
-      <img src="awards-press/awards/2award-2019-dibla-design-award.jpg">
-    </div>
-    <div class="text">
-      <h3>Dibla Design Award 2019 – Finalist</h3>
-    </div>
+<!-- 2 -->
+<div class="item">
+  <div class="image">
+    <img src="awards-press/awards/2award-2019-dibla-design-award.jpg">
   </div>
+  <div class="text">
+    <h3>2019 - Dibla Design Award </h3>
+    <p>Finalist in the House category</p>
+  </div>
+</div>
 
-  <div class="item">
-    <div class="image">
-      <img src="awards-press/awards/1award-2018-riva.png">
-    </div>
-    <div class="text">
-      <h3>RIVA 1920 – 1st Place Winner</h3>
-    </div>
+<!-- 1 -->
+<div class="item">
+  <div class="image">
+    <img src="awards-press/awards/1award-2018-riva.png">
   </div>
+  <div class="text">
+    <h3>2019 - RIVA 1920 – 5° Design Awards</h3>
+    <p>Winner – 1st place in sideboard category</p>
+  </div>
+</div>
 
 </div>
 
+<!-- CURSOR -->
 <div class="cursor-logo">
   <img src="logo.png">
 </div>
 
 <script>
-function toggleMenu() {
-  const menu = document.getElementById('menu');
-  const toggle = document.querySelector('.menu-toggle');
-  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+function toggleMenu(){
+  const menu=document.getElementById('menu');
+  const toggle=document.querySelector('.menu-toggle');
+  menu.style.display=menu.style.display==='block'?'none':'block';
   toggle.classList.toggle('active');
 }
 
-// cursor
-const cursor = document.querySelector('.cursor-logo');
-let mouseX=0, mouseY=0, posX=0, posY=0;
+const cursor=document.querySelector('.cursor-logo');
+let mouseX=0,mouseY=0,posX=0,posY=0;
 
-document.addEventListener('mousemove', e=>{
+document.addEventListener('mousemove',e=>{
   mouseX=e.clientX;
   mouseY=e.clientY;
 });
 
 function animate(){
-  posX += (mouseX-posX)*0.15;
-  posY += (mouseY-posY)*0.15;
+  posX+=(mouseX-posX)*0.15;
+  posY+=(mouseY-posY)*0.15;
   cursor.style.transform=`translate(${posX}px,${posY}px) translate(-50%,-50%)`;
   requestAnimationFrame(animate);
 }
