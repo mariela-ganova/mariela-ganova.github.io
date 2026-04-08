@@ -45,7 +45,6 @@ header {
 }
 
 .logo img { width:70%; }
-
 .logo:hover { transform:scale(1.05); }
 
 /* BURGER */
@@ -119,6 +118,15 @@ header {
   align-items:center;
   padding:3rem 0;
   border-bottom:1px solid #333;
+
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s cubic-bezier(.25,.1,.25,1);
+}
+
+.item.visible {
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* IMAGE */
@@ -141,7 +149,8 @@ header {
   transform: scale(1.35);
   z-index: 5;
 }
-  .image:hover::after {
+
+.image:hover::after {
   content: "";
   position: absolute;
   inset: -20px;
@@ -153,10 +162,11 @@ header {
 /* TEXT */
 .text {
   width:50%;
+  transition:0.4s cubic-bezier(.25,.1,.25,1);
 }
-  .item:hover .text {
+
+.item:hover .text {
   transform: translateX(10px);
-  transition: 0.4s ease;
 }
 
 .text h3 {
@@ -177,10 +187,8 @@ header {
   font-size:0.85rem;
   text-decoration:none;
 }
-  
 
 .text a:hover { color:#fff; }
-  
 
 /* CURSOR */
 .cursor-logo {
@@ -230,7 +238,6 @@ header {
   </div>
 </header>
 
-<!-- FULL MENU -->
 <div class="menu" id="menu">
   <a href="index.html">0.1 HOMEPAGE</a>
   <a href="about.html">0.2 ABOUT</a>
@@ -246,22 +253,16 @@ header {
 <div class="container">
 <div class="title">AWARDS</div>
 
-<!-- 7 -->
 <div class="item">
-  <div class="image">
-    <img src="awards-press/awards/7award-2026-bg-mebel.jpg">
-  </div>
+  <div class="image"><img src="awards-press/awards/7award-2026-bg-mebel.jpg"></div>
   <div class="text">
     <h3>2026 - Bulgarian Furniture of the Year</h3>
     <p>WINNER – 1st place in the conceptual project category with the On'ea chaise lounge.</p>
   </div>
 </div>
 
-<!-- 6 -->
 <div class="item">
-  <div class="image">
-    <img src="awards-press/awards/6award-2025-ida-design-award.jpg">
-  </div>
+  <div class="image"><img src="awards-press/awards/6award-2025-ida-design-award.jpg"></div>
   <div class="text">
     <h3>2024 IDA -International Design Awards – Honorable Mention</h3>
     <p>
@@ -271,11 +272,8 @@ header {
   </div>
 </div>
 
-<!-- 5 -->
 <div class="item">
-  <div class="image">
-    <img src="awards-press/awards/5award-2024-riva.jpg">
-  </div>
+  <div class="image"><img src="awards-press/awards/5award-2024-riva.jpg"></div>
   <div class="text">
     <h3>2024 Riva Design Awards</h3>
     <p>Prize for participation in 9° Design Awards – Outdoor Table and Bench</p>
@@ -283,13 +281,10 @@ header {
   </div>
 </div>
 
-<!-- 4 -->
 <div class="item">
-  <div class="image">
-    <img src="awards-press/awards/4award-2024-big-see-awards.jpg">
-  </div>
+  <div class="image"><img src="awards-press/awards/4award-2024-big-see-awards.jpg"></div>
   <div class="text">
-    <h3>2024 BIG SEE Interior Design Award  – WINNER</h3>
+    <h3>2024 BIG SEE Interior Design Award – WINNER</h3>
     <p>
     Maisonette "GENTLE" – a project where modernity meets tranquility in a seamless fusion of form and function, redefining spatial boundaries.
     </p>
@@ -297,11 +292,8 @@ header {
   </div>
 </div>
 
-<!-- 3 -->
 <div class="item">
-  <div class="image">
-    <img src="awards-press/awards/3award-2019-gandia-blasco.jpg">
-  </div>
+  <div class="image"><img src="awards-press/awards/3award-2019-gandia-blasco.jpg"></div>
   <div class="text">
     <h3>2019 - 13th International Outdoor Furniture Design Award</h3>
     <p>Runner-up for Mr. Toby</p>
@@ -309,31 +301,24 @@ header {
   </div>
 </div>
 
-<!-- 2 -->
 <div class="item">
-  <div class="image">
-    <img src="awards-press/awards/2award-2019-dibla-design-award.jpg">
-  </div>
+  <div class="image"><img src="awards-press/awards/2award-2019-dibla-design-award.jpg"></div>
   <div class="text">
-    <h3>2019 - Dibla Design Award </h3>
+    <h3>2019 - Dibla Design Award</h3>
     <p>Finalist in the House category</p>
   </div>
 </div>
 
-<!-- 1 -->
 <div class="item">
-  <div class="image">
-    <img src="awards-press/awards/1award-2018-riva.png">
-  </div>
+  <div class="image"><img src="awards-press/awards/1award-2018-riva.png"></div>
   <div class="text">
-    <h3>2019 - RIVA 1920 – 5° Design Awards</h3>
+    <h3>2018 - RIVA 1920 – 5° Design Awards</h3>
     <p>Winner – 1st place in sideboard category</p>
   </div>
 </div>
 
 </div>
 
-<!-- CURSOR -->
 <div class="cursor-logo">
   <img src="logo.png">
 </div>
@@ -346,6 +331,7 @@ function toggleMenu(){
   toggle.classList.toggle('active');
 }
 
+/* CURSOR */
 const cursor=document.querySelector('.cursor-logo');
 let mouseX=0,mouseY=0,posX=0,posY=0;
 
@@ -361,6 +347,19 @@ function animate(){
   requestAnimationFrame(animate);
 }
 animate();
+
+/* SCROLL ANIMATION */
+const items = document.querySelectorAll('.item');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+
+items.forEach(item => observer.observe(item));
 </script>
 
 </body>
