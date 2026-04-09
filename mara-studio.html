@@ -10,7 +10,7 @@
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 
-/* --- BODY --- */
+/* BODY + FADE */
 body {
   background:#000;
   color:#ccc;
@@ -18,6 +18,12 @@ body {
   min-height:100vh;
   overflow-x:hidden;
   cursor:none;
+  opacity:0;
+  transition:opacity 0.6s ease;
+}
+
+body.loaded {
+  opacity:1;
 }
 
 /* HEADER */
@@ -131,14 +137,12 @@ header {
   position:relative;
   overflow:hidden;
   display:block;
-  border-radius:8px;
 }
 
-/* IMAGE + JAPANESE EFFECT */
+/* IMAGE */
 .product img {
   width:100%;
   display:block;
-  border-radius:8px;
   transition:transform 0.6s ease, filter 0.6s ease;
   animation:calmFloat 6s ease-in-out infinite;
 }
@@ -154,22 +158,18 @@ header {
   filter:brightness(1.05);
 }
 
-/* OVERLAY */
-.product::after {
+/* JAPANESE CINEMATIC OVERLAY */
+.product::before {
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    to top,
-    rgba(0,0,0,0.5),
-    rgba(0,0,0,0.1)
-  );
+  background:linear-gradient(to bottom, transparent, rgba(0,0,0,0.4));
   opacity:0;
   transition:0.5s;
   z-index:1;
 }
 
-.product:hover::after {
+.product.visible::before {
   opacity:1;
 }
 
@@ -182,16 +182,17 @@ header {
   color:#fff;
   letter-spacing:6px;
   text-transform:uppercase;
+
   opacity:0;
+  transform:translateY(20px);
+  transition:all 0.6s ease;
   z-index:2;
-  transform:translateY(5px);
-  transition:0.5s;
 }
 
-.product:hover .product-name {
+/* SCROLL REVEAL */
+.product.visible .product-name {
   opacity:1;
   transform:translateY(0);
-  letter-spacing:8px;
 }
 
 /* MOBILE */
@@ -220,7 +221,6 @@ header {
     line-height:1.6;
   }
 
-  /* по-японско – махаме анимацията */
   .product img {
     animation:none;
   }
@@ -324,6 +324,7 @@ header {
 </div>
 
 <script>
+// MENU
 function toggleMenu(){
   const menu=document.getElementById('menu');
   const toggle=document.querySelector('.menu-toggle');
@@ -331,10 +332,44 @@ function toggleMenu(){
   toggle.classList.toggle('active');
 }
 
+// CURSOR
 const cursor=document.querySelector('.cursor-logo');
 
 document.addEventListener('mousemove',e=>{
   cursor.style.transform=`translate(${e.clientX}px,${e.clientY}px) translate(-50%,-50%)`;
+});
+
+// SCROLL REVEAL
+const products=document.querySelectorAll('.product');
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+},{ threshold:0.3 });
+
+products.forEach(p=>observer.observe(p));
+
+// PAGE TRANSITION
+window.addEventListener('load',()=>{
+  document.body.classList.add('loaded');
+});
+
+document.querySelectorAll('a').forEach(link=>{
+  link.addEventListener('click',function(e){
+    const target=this.getAttribute('href');
+
+    if(target && !target.startsWith('#') && !target.startsWith('http')){
+      e.preventDefault();
+      document.body.classList.remove('loaded');
+
+      setTimeout(()=>{
+        window.location.href=target;
+      },500);
+    }
+  });
 });
 </script>
 
