@@ -168,17 +168,29 @@ header {
 
 /* --- Mobile --- */
 @media (max-width: 900px) {
+
   body {
     cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .center-nav {
+    position: static; /* махаме fixed */
+    transform: none;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .center-nav a {
+    text-align: center;
   }
 
   .cursor-logo {
     display: none;
-  }
-
-  .center-nav {
-    flex-direction: column;
-    gap: 2rem;
   }
 }
 </style>
