@@ -167,6 +167,7 @@ header {
 }
 
 /* --- Mobile --- */
+
 @media (max-width: 900px) {
 
   body {
@@ -175,22 +176,74 @@ header {
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
-
-  .center-nav {
-    position: static; /* махаме fixed */
-    transform: none;
-    flex-direction: column;
-    gap: 6vh;
-    align-items: center;
-  }
-
-  .center-nav a {
-    text-align: center;
+    overflow: hidden;
   }
 
   .cursor-logo {
     display: none;
+  }
+
+  .center-nav {
+    position: static;
+    transform: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 6vh;
+  }
+
+  /* LINE BETWEEN */
+  .center-nav::before {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: #333;
+    order: 1;
+  }
+
+  .center-nav a {
+    text-align: center;
+    font-size: 2.2rem;
+    letter-spacing: 6px;
+    color: #777;
+    transition: all 0.4s ease;
+    opacity: 0;
+  }
+
+  /* ORDER CONTROL */
+  .center-nav a:nth-child(1) { order: 0; animation: fadeUp 1s ease forwards 0.2s; }
+  .center-nav a:nth-child(2) { order: 2; animation: fadeUp 1s ease forwards 0.5s; }
+
+  /* HOVER / TAP */
+  .center-nav a:hover {
+    color: #fff;
+    transform: scale(1.05);
+    text-shadow: 0 0 12px rgba(255,255,255,0.3);
+  }
+
+  .center-nav a:active {
+    transform: scale(0.95);
+  }
+
+  /* BREATHING EFFECT */
+  .center-nav a {
+    animation: fadeUp 1s ease forwards, breathe 4s ease-in-out infinite;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes breathe {
+    0%, 100% { letter-spacing: 6px; }
+    50% { letter-spacing: 8px; }
   }
 }
 </style>
